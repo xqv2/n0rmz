@@ -67,6 +67,144 @@
         if (r && r !== location.href) history.replaceState(null, null, r);
       })();
     </script>
+    <script>
+      // ─── tink-debug ────────────────────────────────────────────────
+      // Capture last ~80 events into localStorage so we can see what happened
+      // before an iOS tab-kill / mid-modal crash. Renders a floating HUD on
+      // touch devices showing live heap + a "Copy logs" button.
+      (function () {
+        if (window.__tinkDebug) return;
+        var KEY = 'tinkdebug:v1';
+        var MAX = 80;
+        var t0 = Date.now();
+        var read = function () {
+          try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { return []; }
+        };
+        var write = function (arr) {
+          try { localStorage.setItem(KEY, JSON.stringify(arr.slice(-MAX))); } catch (e) {}
+        };
+        var log = function (kind, payload) {
+          var arr = read();
+          var heap = null;
+          if (performance && performance.memory) {
+            heap = Math.round(performance.memory.usedJSHeapSize / 1048576) + 'MB';
+          }
+          arr.push({ t: Date.now() - t0, kind: kind, heap: heap, payload: payload });
+          write(arr);
+          updateHud();
+        };
+        window.__log = log;
+        window.__tinkDebug = { read: read, clear: function () { localStorage.removeItem(KEY); updateHud(); } };
+
+        // Was the previous session interrupted? If we see logs older than this
+        // session's start, and the last log was NOT a clean "pageHide", the
+        // page got killed by Safari (or crashed) and reloaded.
+        var prior = read();
+        var hadPrior = prior.length > 0;
+        if (hadPrior) {
+          log('boot', { hadPrior: true, priorLast: prior[prior.length - 1] });
+        } else {
+          log('boot', {});
+        }
+
+        // ─ event hooks ─
+        window.addEventListener('error', function (e) {
+          log('error', { msg: String(e.message || ''), src: String(e.filename || ''), line: e.lineno });
+        });
+        window.addEventListener('unhandledrejection', function (e) {
+          log('promiseError', { reason: String(e.reason && (e.reason.message || e.reason)) });
+        });
+        window.addEventListener('pagehide', function (e) {
+          log('pageHide', { persisted: !!e.persisted });
+        });
+        window.addEventListener('beforeunload', function () { log('beforeUnload', {}); });
+        document.addEventListener('visibilitychange', function () {
+          log('visibility', { state: document.visibilityState });
+        });
+        window.addEventListener('popstate', function () { log('popstate', { href: location.href }); });
+        document.addEventListener('click', function (e) {
+          var el = e.target;
+          var tag = el && el.tagName;
+          var cls = (el && el.className && el.className.toString && el.className.toString()) || '';
+          var id = (el && el.closest && el.closest('[data-id]') && el.closest('[data-id]').getAttribute('data-id')) || null;
+          log('click', { tag: tag, cls: cls.slice(0, 60), id: id });
+        }, true);
+
+        // Watch for the DetailModal mount/unmount.
+        var modalUp = false;
+        var checkModal = function () {
+          var present = !!document.querySelector('.detail-modal');
+          if (present !== modalUp) {
+            modalUp = present;
+            log(present ? 'modalOpen' : 'modalClose', {});
+          }
+        };
+        var mo = new MutationObserver(checkModal);
+        mo.observe(document.documentElement, { childList: true, subtree: true });
+
+        // Periodic heap sample.
+        if (performance && performance.memory) {
+          setInterval(function () { log('heap', {}); }, 2000);
+        }
+
+        // ─ HUD overlay ─
+        var IS_TOUCH = window.matchMedia && window.matchMedia('(hover: none), (pointer: coarse)').matches;
+        // Show on every device while we're hunting this bug — flip to
+        // IS_TOUCH-only later if it gets noisy.
+        var hud, body, btn, hideBtn;
+        var ensureHud = function () {
+          if (hud || !document.body) return;
+          hud = document.createElement('div');
+          hud.style.cssText = [
+            'position:fixed','top:0','left:0','right:0','z-index:99999',
+            'font:11px/1.35 ui-monospace,Menlo,monospace','color:#fff',
+            'background:rgba(0,0,0,0.78)','padding:6px 8px','max-height:55vh','overflow:auto',
+            'border-bottom:1px solid #333','pointer-events:auto'
+          ].join(';');
+          var bar = document.createElement('div');
+          bar.style.cssText = 'display:flex;gap:6px;align-items:center;margin-bottom:4px';
+          var label = document.createElement('span');
+          label.textContent = 'tink-debug';
+          label.style.cssText = 'font-weight:700;color:#7df';
+          btn = document.createElement('button');
+          btn.textContent = 'Copy';
+          btn.style.cssText = 'font:11px ui-monospace;padding:2px 8px;background:#333;color:#fff;border:1px solid #555;border-radius:4px';
+          btn.onclick = function (e) {
+            e.stopPropagation();
+            var txt = JSON.stringify(read(), null, 2);
+            if (navigator.clipboard) navigator.clipboard.writeText(txt).then(function () { btn.textContent = 'Copied'; });
+            else { var ta = document.createElement('textarea'); ta.value = txt; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); btn.textContent = 'Copied'; }
+            setTimeout(function () { btn.textContent = 'Copy'; }, 1200);
+          };
+          var clrBtn = document.createElement('button');
+          clrBtn.textContent = 'Clear';
+          clrBtn.style.cssText = btn.style.cssText;
+          clrBtn.onclick = function (e) { e.stopPropagation(); window.__tinkDebug.clear(); };
+          hideBtn = document.createElement('button');
+          hideBtn.textContent = 'Hide';
+          hideBtn.style.cssText = btn.style.cssText;
+          hideBtn.onclick = function (e) { e.stopPropagation(); hud.style.display = 'none'; };
+          bar.appendChild(label); bar.appendChild(btn); bar.appendChild(clrBtn); bar.appendChild(hideBtn);
+          body = document.createElement('pre');
+          body.style.cssText = 'margin:0;white-space:pre-wrap;word-break:break-word';
+          hud.appendChild(bar); hud.appendChild(body);
+          document.body.appendChild(hud);
+        };
+        var updateHud = function () {
+          if (!body) return;
+          var arr = read();
+          var tail = arr.slice(-12);
+          var line = tail.map(function (e) {
+            var p = e.payload && Object.keys(e.payload).length ? ' ' + JSON.stringify(e.payload) : '';
+            return (e.t / 1000).toFixed(1) + 's [' + (e.heap || '?') + '] ' + e.kind + p;
+          }).join('\n');
+          body.textContent = line;
+        };
+        if (document.body) ensureHud();
+        else document.addEventListener('DOMContentLoaded', ensureHud);
+        setInterval(function () { ensureHud(); updateHud(); }, 500);
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
