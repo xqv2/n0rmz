@@ -71,7 +71,7 @@ export const useTmdbDetails = (movie) => {
         ? Math.round(d.vote_average * 10)
         : null;
 
-      const photos = IS_TOUCH ? [] : pickDiversePhotos(d.images?.backdrops || [], 4);
+      const photos = IS_TOUCH ? [] : pickDiversePhotos(d.images?.backdrops || [], 6);
 
       setData({ providers, director, cast, runtime, genres, score, photos });
       setLoading(false);
@@ -96,12 +96,12 @@ export const useTmdbDetails = (movie) => {
 //      walk the whole pool with an even step so picks span the popularity
 //      curve. The deeper-in-list backdrops are usually candid stills,
 //      behind-the-scenes, alt-angle shots — exactly what we want.
-const pickDiversePhotos = (backdrops, n = 4) => {
+const pickDiversePhotos = (backdrops, n = 6) => {
   if (!backdrops?.length) return [];
   const textFree = backdrops.filter((b) => !b.iso_639_1);
   const pool = textFree.length >= n ? textFree : backdrops;
   if (pool.length <= n) {
-    return pool.map((b) => `https://image.tmdb.org/t/p/w500${b.file_path}`);
+    return pool.map((b) => `https://image.tmdb.org/t/p/w780${b.file_path}`);
   }
   // Stride-sample. e.g. pool of 30 picking 6 → indices 0, 5, 10, 15, 20, 25.
   const stride = pool.length / n;
@@ -109,5 +109,5 @@ const pickDiversePhotos = (backdrops, n = 4) => {
   for (let i = 0; i < n; i++) {
     picks.push(pool[Math.floor(i * stride)]);
   }
-  return picks.map((b) => `https://image.tmdb.org/t/p/w500${b.file_path}`);
+  return picks.map((b) => `https://image.tmdb.org/t/p/w780${b.file_path}`);
 };

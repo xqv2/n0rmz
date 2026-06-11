@@ -74,6 +74,13 @@
       // touch devices showing live heap + a "Copy logs" button.
       (function () {
         if (window.__tinkDebug) return;
+        // Desktop browsers don't have the iOS WebContent-process-kill bug we're
+        // hunting, and the HUD strip is intrusive on a wider viewport. Only
+        // show it on touch devices (phones/tablets), where the bug actually
+        // reproduces. ?debug=1 forces it on for desktop testing.
+        var IS_TOUCH = window.matchMedia && window.matchMedia('(hover: none), (pointer: coarse)').matches;
+        var FORCE_DEBUG = location.search && location.search.indexOf('debug=1') !== -1;
+        if (!IS_TOUCH && !FORCE_DEBUG) return;
         var KEY = 'tinkdebug:v1';
         var MAX = 80;
         var t0 = Date.now();
