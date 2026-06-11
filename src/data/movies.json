@@ -12856,36 +12856,6 @@
     "posterVertical": "/posters/god-of-war-2-vertical.jpg"
   },
   {
-    "id": "game-super-mario",
-    "slug": "super-mario",
-    "title": "Super mario(itch)",
-    "originalTitle": "Super mario(itch)",
-    "year": 2018,
-    "type": "game",
-    "poster": "https://media.rawg.io/media/screenshots/2d8/2d85b588d329dc747f2d0a34506f3633.jpg",
-    "genres": [
-      "Platformer"
-    ],
-    "language": null,
-    "runtime": null,
-    "seasons": null,
-    "episodes": null,
-    "overview": "This is the original mario brothers except its written in jar",
-    "ratings": {
-      "tmdb": null,
-      "voteCount": 10,
-      "personal": null
-    },
-    "popularity": 19,
-    "tmdbId": null,
-    "detailsUrl": "https://rawg.io/games/super-mario",
-    "twist": false,
-    "scary": false,
-    "intense": false,
-    "mindbending": false,
-    "clever": false
-  },
-  {
     "id": "movie-project-hail-mary-2026",
     "slug": "project-hail-mary-2026",
     "title": "Project Hail Mary",
@@ -12909,6 +12879,38 @@
     },
     "popularity": 198.4691,
     "tmdbId": 687163,
+    "twist": false,
+    "scary": false,
+    "intense": false,
+    "mindbending": false,
+    "clever": false
+  },
+  {
+    "id": "game-super-mario-bros",
+    "slug": "super-mario-bros",
+    "title": "Super Mario Bros.",
+    "originalTitle": "Super Mario Bros.",
+    "year": 1985,
+    "type": "game",
+    "poster": "https://media.rawg.io/media/games/154/154fea9689109f26c49c6a2db6263ef9.jpg",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Platformer"
+    ],
+    "language": null,
+    "runtime": null,
+    "seasons": null,
+    "episodes": null,
+    "overview": "Mario and Luigi star in their first ever Mushroom Kingdom adventure! Find out why Super Mario Bros. is instantly recognizable to millions of people across the globe, and what made it the best-selling game in the world for three decades straight. Jump over obstacles, grab coins, kick shells, and throw fireballs through eight action-packed worlds in this iconic NES classic. Only you and the Mario Bros. can rescue Princess Toadstool from the clutches of the evil Bowser. \r\n\r\nFor more than 25 years, the Super Mario series has conquered the charts and won the hearts of fans the world over. Now you can discover - or rediscover - the original game that made Mario a household name.\r\n\r\nRun and jump with Mario or Luigi through caves and castles, down pipes and across platforms, and face off against Bowser to rescue your beloved Princess Peach.\r\n\r\nIt may be more than a quarter of a century old, but Super Mario Bros. is still as enchanting as ever!",
+    "ratings": {
+      "tmdb": null,
+      "voteCount": 783,
+      "personal": null
+    },
+    "popularity": 1548,
+    "tmdbId": null,
+    "detailsUrl": "https://rawg.io/games/super-mario-bros",
     "twist": false,
     "scary": false,
     "intense": false,
