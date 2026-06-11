@@ -10,20 +10,22 @@ const TYPE_PRIORITY = { sub: 0, free: 1, ads: 2, tve: 3, rent: 4, buy: 5, purcha
 
 // Resolve TMDB id → Watchmode title id, then fetch sources for the requested
 // region. Returns [] on any failure so the caller can degrade gracefully.
-export const fetchWatchmodeSources = async (tmdbId, type, region = 'US') => {
+export const fetchWatchmodeSources = async (tmdbId, type, region = 'US', signal) => {
   if (!tmdbId || !WATCHMODE_API_KEY) return [];
   const searchField = type === 'show' ? 'tmdb_tv_id' : 'tmdb_movie_id';
   try {
     const sr = await fetch(
       `${WATCHMODE_BASE}/search/?apiKey=${WATCHMODE_API_KEY}`
-      + `&search_field=${searchField}&search_value=${tmdbId}`
+      + `&search_field=${searchField}&search_value=${tmdbId}`,
+      { signal }
     );
     if (!sr.ok) return [];
     const sd = await sr.json();
     const wmId = sd.title_results?.[0]?.id;
     if (!wmId) return [];
     const r = await fetch(
-      `${WATCHMODE_BASE}/title/${wmId}/sources/?apiKey=${WATCHMODE_API_KEY}&regions=${region}`
+      `${WATCHMODE_BASE}/title/${wmId}/sources/?apiKey=${WATCHMODE_API_KEY}&regions=${region}`,
+      { signal }
     );
     if (!r.ok) return [];
     const data = await r.json();

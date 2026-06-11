@@ -32,6 +32,7 @@ export const useTmdbDetails = (movie) => {
     if (!movie?.tmdbId || movie.type === 'game') return;
     if (!TMDB_API_KEY) return;
     const path = movie.type === 'show' ? 'tv' : 'movie';
+    const ctrl = new AbortController();
     let cancelled = false;
     setLoading(true);
     const tmdbUrl = `${TMDB_BASE}/${path}/${movie.tmdbId}`
@@ -40,8 +41,8 @@ export const useTmdbDetails = (movie) => {
       + `&include_image_language=en,null`;
 
     Promise.all([
-      fetch(tmdbUrl).then((r) => (r.ok ? r.json() : null)).catch(() => null),
-      fetchWatchmodeSources(movie.tmdbId, movie.type),
+      fetch(tmdbUrl, { signal: ctrl.signal }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
+      fetchWatchmodeSources(movie.tmdbId, movie.type, 'US', ctrl.signal),
     ]).then(([d, wmSources]) => {
       if (cancelled) return;
       if (!d) { setLoading(false); return; }
@@ -67,13 +68,13 @@ export const useTmdbDetails = (movie) => {
         ? Math.round(d.vote_average * 10)
         : null;
 
-      const photos = pickDiversePhotos(d.images?.backdrops || [], 6);
+      const photos = pickDiversePhotos(d.images?.backdrops || [], 4);
 
       setData({ providers, director, cast, runtime, genres, score, photos });
       setLoading(false);
     });
 
-    return () => { cancelled = true; };
+    return () => { cancelled = true; ctrl.abort(); };
   }, [movie]);
 
   return { ...data, loading };
@@ -92,12 +93,12 @@ export const useTmdbDetails = (movie) => {
 //      walk the whole pool with an even step so picks span the popularity
 //      curve. The deeper-in-list backdrops are usually candid stills,
 //      behind-the-scenes, alt-angle shots — exactly what we want.
-const pickDiversePhotos = (backdrops, n = 6) => {
+const pickDiversePhotos = (backdrops, n = 4) => {
   if (!backdrops?.length) return [];
   const textFree = backdrops.filter((b) => !b.iso_639_1);
   const pool = textFree.length >= n ? textFree : backdrops;
   if (pool.length <= n) {
-    return pool.map((b) => `https://image.tmdb.org/t/p/w780${b.file_path}`);
+    return pool.map((b) => `https://image.tmdb.org/t/p/w500${b.file_path}`);
   }
   // Stride-sample. e.g. pool of 30 picking 6 → indices 0, 5, 10, 15, 20, 25.
   const stride = pool.length / n;
@@ -105,5 +106,5 @@ const pickDiversePhotos = (backdrops, n = 6) => {
   for (let i = 0; i < n; i++) {
     picks.push(pool[Math.floor(i * stride)]);
   }
-  return picks.map((b) => `https://image.tmdb.org/t/p/w780${b.file_path}`);
+  return picks.map((b) => `https://image.tmdb.org/t/p/w500${b.file_path}`);
 };
