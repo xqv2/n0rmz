@@ -116,11 +116,22 @@
         // page got killed by Safari (or crashed) and reloaded.
         var prior = read();
         var hadPrior = prior.length > 0;
+        var navType = null;
+        try {
+          var navEntry = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+          navType = navEntry && navEntry.type;
+        } catch (e) {}
+        var bootInfo = {
+          navType: navType,
+          ua: (navigator.userAgent || '').slice(0, 60),
+          href: location.href.slice(-40),
+          ref: (document.referrer || '').slice(-40),
+        };
         if (hadPrior) {
-          log('boot', { hadPrior: true, priorLast: prior[prior.length - 1] });
-        } else {
-          log('boot', {});
+          bootInfo.priorLast = prior[prior.length - 1];
+          bootInfo.priorTail = prior.slice(-3).map(function (e) { return e.kind; });
         }
+        log('boot', bootInfo);
 
         // ─ event hooks ─
         window.addEventListener('error', function (e) {
@@ -161,6 +172,42 @@
         if (performance && performance.memory) {
           setInterval(function () { log('heap', {}); }, 2000);
         }
+
+        // Intercept any explicit navigation: location.assign/replace/href,
+        // history.back/forward, history.pushState/replaceState, location.reload.
+        try {
+          var origReload = location.reload && location.reload.bind(location);
+          if (origReload) {
+            location.reload = function () {
+              log('locationReload', { stack: (new Error()).stack ? (new Error()).stack.slice(0, 200) : '' });
+              return origReload.apply(location, arguments);
+            };
+          }
+        } catch (e) {}
+        try {
+          var origAssign = location.assign && location.assign.bind(location);
+          if (origAssign) {
+            location.assign = function (url) { log('locationAssign', { url: String(url) }); return origAssign.apply(location, arguments); };
+          }
+          var origReplace = location.replace && location.replace.bind(location);
+          if (origReplace) {
+            location.replace = function (url) { log('locationReplace', { url: String(url) }); return origReplace.apply(location, arguments); };
+          }
+        } catch (e) {}
+        try {
+          var origPush = history.pushState.bind(history);
+          history.pushState = function () { log('pushState', { args: [].slice.call(arguments).slice(0, 3) }); return origPush.apply(history, arguments); };
+          var origReplaceState = history.replaceState.bind(history);
+          history.replaceState = function () { log('replaceState', { args: [].slice.call(arguments).slice(0, 3) }); return origReplaceState.apply(history, arguments); };
+          var origBack = history.back.bind(history);
+          history.back = function () { log('historyBack', {}); return origBack.apply(history, arguments); };
+          var origForward = history.forward.bind(history);
+          history.forward = function () { log('historyForward', {}); return origForward.apply(history, arguments); };
+          var origGo = history.go.bind(history);
+          history.go = function (n) { log('historyGo', { n: n }); return origGo.apply(history, arguments); };
+        } catch (e) {}
+
+        window.addEventListener('hashchange', function () { log('hashchange', { hash: location.hash }); });
 
         // ─ HUD overlay ─
         var ensureHud = function () {
