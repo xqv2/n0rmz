@@ -9,6 +9,7 @@ import { useBodyScrollLock } from '../hooks/useBodyScrollLock';
 import { useFocusTrap } from '../hooks/useFocusTrap';
 import { usePosterTint } from '../hooks/usePosterTint';
 import { useTmdbDetails } from '../hooks/useTmdbDetails';
+import { useRawgDetails } from '../hooks/useRawgDetails';
 import { GameMedia } from './GameMedia';
 import { PhotoStrip } from './PhotoStrip';
 import { PosterImage } from './PosterImage';
@@ -47,6 +48,8 @@ export const DetailModal = ({ movie, onClose }) => {
   // Single TMDB+Watchmode round-trip on open. Returns empty defaults until the
   // response lands so the modal still renders immediately.
   const fetched = useTmdbDetails(movie);
+  // Same idea for games — RAWG detail/screenshots/videos in parallel.
+  const fetchedGame = useRawgDetails(movie);
 
   useBodyScrollLock(!!movie);
   useFocusTrap(modalRef, !!movie);
@@ -68,6 +71,21 @@ export const DetailModal = ({ movie, onClose }) => {
   const director = fetched.director ?? movie.director ?? null;
   const runtime = fetched.runtime ?? movie.runtime ?? null;
   const score = fetched.score ?? movie.score ?? null;
+
+  // Same overlay pattern for games — live RAWG wins, static fallback. Old
+  // entries added via admin with the basic schema get their detail panel
+  // populated at modal open.
+  const gameDevelopers = fetchedGame.developers.length ? fetchedGame.developers : (movie.developers || []);
+  const gamePublishers = fetchedGame.publishers.length ? fetchedGame.publishers : (movie.publishers || []);
+  const gameMetacritic = fetchedGame.metacritic ?? movie.metacritic ?? null;
+  const gameEsrbRating = fetchedGame.esrbRating ?? movie.esrbRating ?? null;
+  const gamePlaytime = fetchedGame.playtime ?? movie.playtime ?? null;
+  const gameStores = fetchedGame.stores.length ? fetchedGame.stores : (movie.stores || []);
+  // GameMedia consumes screenshots+videos+poster directly; pass a merged
+  // object so it also uses live data when present.
+  const gameForMedia = (fetchedGame.screenshots.length || fetchedGame.videos.length)
+    ? { ...movie, screenshots: fetchedGame.screenshots.length ? fetchedGame.screenshots : movie.screenshots, videos: fetchedGame.videos.length ? fetchedGame.videos : movie.videos }
+    : movie;
 
   const tier = tierLabelFor(movie.ratings?.personal);
   const typeLabel = TYPE_LABEL[movie.type] || 'Title';
@@ -150,7 +168,7 @@ export const DetailModal = ({ movie, onClose }) => {
 
             {movie.notes && <motion.p className="detail-notes" variants={META_ITEM}>&ldquo;{movie.notes}&rdquo;</motion.p>}
 
-            {movie.type === 'game' && <motion.div className="meta-stagger-row" variants={META_ITEM}><GameMedia game={movie} /></motion.div>}
+            {movie.type === 'game' && <motion.div className="meta-stagger-row" variants={META_ITEM}><GameMedia game={gameForMedia} /></motion.div>}
             {movie.type !== 'game' && (photos.length > 0 || (fetched.loading && !movie.photos?.length)) && (
               <motion.div className="meta-stagger-row" variants={META_ITEM}>
                 <PhotoStrip photos={photos} loading={fetched.loading && photos.length === 0} />
@@ -194,40 +212,40 @@ export const DetailModal = ({ movie, onClose }) => {
               </motion.dl>
             )}
 
-            {movie.type === 'game' && (movie.developers?.length || movie.publishers?.length || movie.metacritic != null || movie.esrbRating || movie.playtime) && (
+            {movie.type === 'game' && (gameDevelopers.length || gamePublishers.length || gameMetacritic != null || gameEsrbRating || gamePlaytime) && (
               <motion.dl className="game-specs" variants={META_ITEM}>
-                {movie.developers?.length > 0 && (
+                {gameDevelopers.length > 0 && (
                   <>
                     <dt>Developer</dt>
-                    <dd title={movie.developers.join(', ')}>{movie.developers.join(', ')}</dd>
+                    <dd title={gameDevelopers.join(', ')}>{gameDevelopers.join(', ')}</dd>
                   </>
                 )}
-                {movie.publishers?.length > 0 && (
+                {gamePublishers.length > 0 && (
                   <>
                     <dt>Publisher</dt>
-                    <dd title={movie.publishers.join(', ')}>{movie.publishers.join(', ')}</dd>
+                    <dd title={gamePublishers.join(', ')}>{gamePublishers.join(', ')}</dd>
                   </>
                 )}
-                {movie.metacritic != null && (
+                {gameMetacritic != null && (
                   <>
                     <dt>Metacritic</dt>
                     <dd>
-                      <span className={`mc-score mc-${scoreTier(movie.metacritic)}`}>
-                        {movie.metacritic}
+                      <span className={`mc-score mc-${scoreTier(gameMetacritic)}`}>
+                        {gameMetacritic}
                       </span>
                     </dd>
                   </>
                 )}
-                {movie.esrbRating && (
+                {gameEsrbRating && (
                   <>
                     <dt>ESRB</dt>
-                    <dd>{movie.esrbRating.name}</dd>
+                    <dd>{gameEsrbRating.name}</dd>
                   </>
                 )}
-                {movie.playtime && (
+                {gamePlaytime && (
                   <>
                     <dt>Avg play</dt>
-                    <dd>{movie.playtime}h</dd>
+                    <dd>{gamePlaytime}h</dd>
                   </>
                 )}
               </motion.dl>
@@ -292,10 +310,10 @@ export const DetailModal = ({ movie, onClose }) => {
               </motion.div>
             )}
 
-            {movie.type === 'game' && movie.stores?.filter((s) => s.url && !STORE_META[s.slug]?.hidden).length > 0 && (
+            {movie.type === 'game' && gameStores.filter((s) => s.url && !STORE_META[s.slug]?.hidden).length > 0 && (
               <motion.div className="detail-platforms" aria-label="Get it on" variants={META_ITEM}>
                 <div className="detail-platform-row is-scroll">
-                  {movie.stores.filter((s) => s.url && !STORE_META[s.slug]?.hidden).slice(0, 5).map((s) => {
+                  {gameStores.filter((s) => s.url && !STORE_META[s.slug]?.hidden).slice(0, 5).map((s) => {
                     const meta = STORE_META[s.slug] || {};
                     const label = meta.label || s.name;
                     const iconUrl = s.domain
