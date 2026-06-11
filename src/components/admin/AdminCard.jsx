@@ -10,7 +10,14 @@ export const AdminCard = ({ movie, edited, onPosterClick, onScore, onNotes, onDe
   const secondaryBadge = pickPosterBadge(movie);
   const isDeleted = movie._deleted;
   const isGame = movie.type === 'game';
-  const heroImage = movie.poster || movie.screenshots?.[0] || null;
+  const rawHero = movie.poster || movie.screenshots?.[0] || null;
+  // Same cache-bust trick as MovieCard.jsx — browsers stick to cached
+  // failed-load results from before a poster was committed. Without this,
+  // the admin shows broken thumbnails for any title whose poster 404'd at
+  // any earlier visit, even though the file now exists in the repo.
+  const heroImage = rawHero && rawHero.startsWith('/posters/')
+    ? `${rawHero}?v=2`
+    : rawHero;
   const stop = (e) => e.stopPropagation();
   const [confirmOpen, setConfirmOpen] = useState(false);
 
