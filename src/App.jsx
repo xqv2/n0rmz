@@ -204,7 +204,7 @@ export default function App() {
             ))}
           </div>
 
-          {filtered.length === 0 && (
+          {filtered.length === 0 && !moviesLoading && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

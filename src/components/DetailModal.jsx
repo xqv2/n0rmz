@@ -80,7 +80,7 @@ export const DetailModal = ({ movie, onClose }) => {
   const gameMetacritic = fetchedGame.metacritic ?? movie.metacritic ?? null;
   const gameEsrbRating = fetchedGame.esrbRating ?? movie.esrbRating ?? null;
   const gamePlaytime = fetchedGame.playtime ?? movie.playtime ?? null;
-  const gameStores = fetchedGame.stores.length ? fetchedGame.stores : (movie.stores || []);
+  const gameStores = fetchedGame.stores.some((s) => s.url) ? fetchedGame.stores : (movie.stores || []);
   // GameMedia consumes screenshots+videos+poster directly; pass a merged
   // object so it also uses live data when present.
   const gameForMedia = (fetchedGame.screenshots.length || fetchedGame.videos.length)
@@ -90,6 +90,14 @@ export const DetailModal = ({ movie, onClose }) => {
   const tier = tierLabelFor(movie.ratings?.personal);
   const typeLabel = TYPE_LABEL[movie.type] || 'Title';
   const badge = pickPosterBadge(movie);
+
+  // Match MovieCard's cache-buster on local poster URLs so a stale 404 (cached
+  // before the file landed on disk) doesn't leave the modal showing the
+  // fallback even though the poster now exists.
+  const rawPoster = movie.posterVertical || movie.poster;
+  const posterSrc = rawPoster && rawPoster.startsWith('/posters/')
+    ? `${rawPoster}?v=3`
+    : rawPoster;
 
   // A touch of poster vibrancy fades into the dark surface — the modal still
   // reads as "dark" but feels connected to the title.
@@ -136,10 +144,10 @@ export const DetailModal = ({ movie, onClose }) => {
           </button>
 
           <div className="detail-poster-wrap">
-            {(movie.posterVertical || movie.poster) && (
+            {posterSrc && (
               <div
                 className="detail-poster-glow"
-                style={{ backgroundImage: `url(${movie.posterVertical || movie.poster})` }}
+                style={{ backgroundImage: `url(${posterSrc})` }}
                 aria-hidden="true"
               />
             )}
@@ -148,7 +156,7 @@ export const DetailModal = ({ movie, onClose }) => {
             )}
             <div className="detail-poster">
               <PosterImage
-                src={movie.posterVertical || movie.poster}
+                src={posterSrc}
                 alt={`Poster for ${movie.title}`}
                 fallback={movie.title}
               />
