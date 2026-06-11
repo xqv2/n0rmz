@@ -82,7 +82,7 @@ export const MovieCard = memo(({ movie, index = 0, columns = 5, activeTierFilter
   // pointed at (the sync script overwrites posters, and some browsers stick
   // to the failed result they cached during the brief replace window).
   const heroImage = rawHero && rawHero.startsWith('/posters/')
-    ? `${rawHero}?v=2`
+    ? `${rawHero}?v=3`
     : rawHero;
   const hasVideo = isGame && (movie.videos?.[0]?.low || movie.videos?.[0]?.high);
   // Cycle through up to 4 screenshots on hover (RAWG-style). Use the entries

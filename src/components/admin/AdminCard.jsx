@@ -16,7 +16,7 @@ export const AdminCard = ({ movie, edited, onPosterClick, onScore, onNotes, onDe
   // the admin shows broken thumbnails for any title whose poster 404'd at
   // any earlier visit, even though the file now exists in the repo.
   const heroImage = rawHero && rawHero.startsWith('/posters/')
-    ? `${rawHero}?v=2`
+    ? `${rawHero}?v=3`
     : rawHero;
   const stop = (e) => e.stopPropagation();
   const [confirmOpen, setConfirmOpen] = useState(false);
