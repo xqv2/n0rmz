@@ -77,6 +77,17 @@
         var KEY = 'tinkdebug:v1';
         var MAX = 80;
         var t0 = Date.now();
+        var hud, body, btn, hideBtn;
+        var updateHud = function () {
+          if (!body) return;
+          var arr = read();
+          var tail = arr.slice(-12);
+          var line = tail.map(function (e) {
+            var p = e.payload && Object.keys(e.payload).length ? ' ' + JSON.stringify(e.payload) : '';
+            return (e.t / 1000).toFixed(1) + 's [' + (e.heap || '?') + '] ' + e.kind + p;
+          }).join('\n');
+          body.textContent = line;
+        };
         var read = function () {
           try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { return []; }
         };
@@ -84,14 +95,18 @@
           try { localStorage.setItem(KEY, JSON.stringify(arr.slice(-MAX))); } catch (e) {}
         };
         var log = function (kind, payload) {
-          var arr = read();
-          var heap = null;
-          if (performance && performance.memory) {
-            heap = Math.round(performance.memory.usedJSHeapSize / 1048576) + 'MB';
+          try {
+            var arr = read();
+            var heap = null;
+            if (performance && performance.memory) {
+              heap = Math.round(performance.memory.usedJSHeapSize / 1048576) + 'MB';
+            }
+            arr.push({ t: Date.now() - t0, kind: kind, heap: heap, payload: payload || {} });
+            write(arr);
+            updateHud();
+          } catch (e) {
+            // never let logging break the page
           }
-          arr.push({ t: Date.now() - t0, kind: kind, heap: heap, payload: payload });
-          write(arr);
-          updateHud();
         };
         window.__log = log;
         window.__tinkDebug = { read: read, clear: function () { localStorage.removeItem(KEY); updateHud(); } };
@@ -148,27 +163,23 @@
         }
 
         // ─ HUD overlay ─
-        var IS_TOUCH = window.matchMedia && window.matchMedia('(hover: none), (pointer: coarse)').matches;
-        // Show on every device while we're hunting this bug — flip to
-        // IS_TOUCH-only later if it gets noisy.
-        var hud, body, btn, hideBtn;
         var ensureHud = function () {
           if (hud || !document.body) return;
           hud = document.createElement('div');
           hud.style.cssText = [
             'position:fixed','top:0','left:0','right:0','z-index:99999',
             'font:11px/1.35 ui-monospace,Menlo,monospace','color:#fff',
-            'background:rgba(0,0,0,0.78)','padding:6px 8px','max-height:55vh','overflow:auto',
-            'border-bottom:1px solid #333','pointer-events:auto'
+            'background:#b00020','padding:8px 10px','max-height:55vh','overflow:auto',
+            'border-bottom:3px solid #fff','pointer-events:auto','box-shadow:0 4px 16px rgba(0,0,0,0.6)'
           ].join(';');
           var bar = document.createElement('div');
-          bar.style.cssText = 'display:flex;gap:6px;align-items:center;margin-bottom:4px';
+          bar.style.cssText = 'display:flex;gap:6px;align-items:center;margin-bottom:6px;flex-wrap:wrap';
           var label = document.createElement('span');
           label.textContent = 'tink-debug';
-          label.style.cssText = 'font-weight:700;color:#7df';
+          label.style.cssText = 'font-weight:700;color:#fff;background:#000;padding:2px 6px;border-radius:3px';
           btn = document.createElement('button');
           btn.textContent = 'Copy';
-          btn.style.cssText = 'font:11px ui-monospace;padding:2px 8px;background:#333;color:#fff;border:1px solid #555;border-radius:4px';
+          btn.style.cssText = 'font:11px ui-monospace;padding:4px 10px;background:#fff;color:#000;border:0;border-radius:4px;font-weight:700';
           btn.onclick = function (e) {
             e.stopPropagation();
             var txt = JSON.stringify(read(), null, 2);
@@ -186,19 +197,10 @@
           hideBtn.onclick = function (e) { e.stopPropagation(); hud.style.display = 'none'; };
           bar.appendChild(label); bar.appendChild(btn); bar.appendChild(clrBtn); bar.appendChild(hideBtn);
           body = document.createElement('pre');
-          body.style.cssText = 'margin:0;white-space:pre-wrap;word-break:break-word';
+          body.style.cssText = 'margin:0;white-space:pre-wrap;word-break:break-word;color:#fff';
           hud.appendChild(bar); hud.appendChild(body);
           document.body.appendChild(hud);
-        };
-        var updateHud = function () {
-          if (!body) return;
-          var arr = read();
-          var tail = arr.slice(-12);
-          var line = tail.map(function (e) {
-            var p = e.payload && Object.keys(e.payload).length ? ' ' + JSON.stringify(e.payload) : '';
-            return (e.t / 1000).toFixed(1) + 's [' + (e.heap || '?') + '] ' + e.kind + p;
-          }).join('\n');
-          body.textContent = line;
+          updateHud();
         };
         if (document.body) ensureHud();
         else document.addEventListener('DOMContentLoaded', ensureHud);
