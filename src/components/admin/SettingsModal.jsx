@@ -96,22 +96,22 @@ export const SettingsModal = ({ initial, onSave, onClose, dismissable, simple })
               onChange={(e) => setBranch(e.target.value)}
               placeholder="main"
             />
-            <label className="settings-label" htmlFor="settings-tmdb">TMDB API key (admin search only)</label>
+            <label className="settings-label" htmlFor="settings-tmdb">TMDB API key (optional override)</label>
             <input
               id="settings-tmdb"
               type="password"
               value={tmdbKey}
               onChange={(e) => setTmdbKey(e.target.value)}
-              placeholder="v3 api key"
+              placeholder="leave blank to use bundled key"
               autoComplete="off"
             />
-            <label className="settings-label" htmlFor="settings-rawg">RAWG API key (admin search only)</label>
+            <label className="settings-label" htmlFor="settings-rawg">RAWG API key (optional override)</label>
             <input
               id="settings-rawg"
               type="password"
               value={rawgKey}
               onChange={(e) => setRawgKey(e.target.value)}
-              placeholder="rawg api key"
+              placeholder="leave blank to use bundled key"
               autoComplete="off"
             />
           </>

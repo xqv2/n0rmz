@@ -121,8 +121,13 @@ const extractTmdbId = (input) => {
 };
 
 export const AddModal = ({ onClose, onAdded, defaultType = 'movie', apiKeys, openSettings }) => {
-  const tmdbKey = apiKeys?.tmdb || '';
-  const rawgKey = apiKeys?.rawg || '';
+  // Prefer the per-user override from Settings → Advanced; fall back to the
+  // build-time VITE_* env vars so the admin works out of the box without
+  // requiring manual key entry. Both keys are TMDB/RAWG read-only and public-
+  // by-design, inlined into the public bundle (treat as usage-restricted, not
+  // secret).
+  const tmdbKey = apiKeys?.tmdb || import.meta.env.VITE_TMDB_API_KEY || '';
+  const rawgKey = apiKeys?.rawg || import.meta.env.VITE_RAWG_API_KEY || '';
   const [type, setType] = useState(defaultType);
   // tmdb (movie/show)
   const [input, setInput] = useState('');

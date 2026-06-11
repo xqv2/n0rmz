@@ -71,11 +71,13 @@ jobs:
       - run: npm run build
         env:
           # TMDB + Watchmode keys are inlined into the public bundle so the
-          # DetailModal can fetch live providers/cast/photos on open. Both are
-          # public-by-design (TMDB v3 read-only, Watchmode 1k/mo). Treat as
-          # usage-restricted, not secret.
+          # DetailModal can fetch live providers/cast/photos on open. RAWG is
+          # inlined for the admin's "Add game" search. All three are
+          # public-by-design (TMDB v3 read-only, Watchmode 1k/mo, RAWG free
+          # tier). Treat as usage-restricted, not secret.
           VITE_TMDB_API_KEY: ${{ secrets.VITE_TMDB_API_KEY }}
           VITE_WATCHMODE_API_KEY: ${{ secrets.VITE_WATCHMODE_API_KEY }}
+          VITE_RAWG_API_KEY: ${{ secrets.VITE_RAWG_API_KEY }}
 
       - uses: actions/upload-pages-artifact@v3
         with:
