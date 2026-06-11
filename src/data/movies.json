@@ -12886,31 +12886,68 @@
     "clever": false
   },
   {
-    "id": "game-super-mario-bros",
-    "slug": "super-mario-bros",
-    "title": "Super Mario Bros.",
-    "originalTitle": "Super Mario Bros.",
-    "year": 1985,
+    "id": "game-super-mario-world-super-mario-advance-2",
+    "slug": "super-mario-world-super-mario-advance-2",
+    "title": "Super Mario World: Super Mario Advance 2",
+    "originalTitle": "Super Mario World: Super Mario Advance 2",
+    "year": 2001,
     "type": "game",
-    "poster": "https://media.rawg.io/media/games/154/154fea9689109f26c49c6a2db6263ef9.jpg",
+    "poster": "https://media.rawg.io/media/games/413/4135e800918b4d9c0f6094ccd003a054.jpg",
     "genres": [
       "Action",
-      "Adventure",
       "Platformer"
     ],
     "language": null,
     "runtime": null,
     "seasons": null,
     "episodes": null,
-    "overview": "Mario and Luigi star in their first ever Mushroom Kingdom adventure! Find out why Super Mario Bros. is instantly recognizable to millions of people across the globe, and what made it the best-selling game in the world for three decades straight. Jump over obstacles, grab coins, kick shells, and throw fireballs through eight action-packed worlds in this iconic NES classic. Only you and the Mario Bros. can rescue Princess Toadstool from the clutches of the evil Bowser. \r\n\r\nFor more than 25 years, the Super Mario series has conquered the charts and won the hearts of fans the world over. Now you can discover - or rediscover - the original game that made Mario a household name.\r\n\r\nRun and jump with Mario or Luigi through caves and castles, down pipes and across platforms, and face off against Bowser to rescue your beloved Princess Peach.\r\n\r\nIt may be more than a quarter of a century old, but Super Mario Bros. is still as enchanting as ever!",
+    "overview": "Super Mario World: Super Mario Advance 2 is a Platformer 2D video game published by N released on February 9th, 2002 for the GBA.",
     "ratings": {
       "tmdb": null,
-      "voteCount": 783,
+      "voteCount": 31,
       "personal": null
     },
-    "popularity": 1548,
+    "popularity": 100,
     "tmdbId": null,
-    "detailsUrl": "https://rawg.io/games/super-mario-bros",
+    "detailsUrl": "https://rawg.io/games/super-mario-world-super-mario-advance-2",
+    "website": null,
+    "rawgId": 23967,
+    "rawgSlug": "super-mario-world-super-mario-advance-2",
+    "developers": [
+      "Nintendo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "metacritic": 92,
+    "esrbRating": {
+      "name": "Everyone",
+      "slug": "everyone"
+    },
+    "playtime": null,
+    "platforms": [
+      {
+        "slug": "game-boy-advance",
+        "name": "Game Boy Advance"
+      }
+    ],
+    "stores": [
+      {
+        "slug": "nintendo",
+        "name": "Nintendo Store",
+        "domain": "nintendo.com",
+        "url": "https://rawg.io/games/super-mario-world-super-mario-advance-2"
+      }
+    ],
+    "screenshots": [
+      "https://media.rawg.io/media/screenshots/9f8/9f8c62730030befa9e84992ec5e597e1.jpg",
+      "https://media.rawg.io/media/screenshots/c27/c27da0bdec88fd7de37cd5778fa8c202.jpg",
+      "https://media.rawg.io/media/screenshots/20c/20c35a79120ad19eb6c047be78975983.jpg",
+      "https://media.rawg.io/media/screenshots/5d3/5d3c451f741339d78c9464b95949d87e.jpg",
+      "https://media.rawg.io/media/screenshots/8bf/8bf38042779e197fb091d622347e354e.jpg",
+      "https://media.rawg.io/media/screenshots/333/3330b3fc44109e2bbf37292baad1b70c.jpg"
+    ],
+    "videos": [],
     "twist": false,
     "scary": false,
     "intense": false,
