@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import { SlidersHorizontal } from 'lucide-react';
+import { SlidersHorizontal, Search } from 'lucide-react';
 import './styles/tokens.css';
 import './styles/app.css';
 import { TYPE_FOR_TAB, computeTabCounts } from './lib/tabs';
@@ -86,36 +86,17 @@ export default function App() {
   const [gridRef, columns] = useGridColumns(5, activeTab);
   useBodyScrollLock(sheetOpen);
 
-  // Mobile search transform: when the user scrolls past the in-flow search
-  // row, it collapses to a circular icon button on the right (mirroring the
-  // filter FAB on the left). Tapping the icon expands it back; scrolling
-  // back to the top auto-collapses to the in-flow row.
-  const [searchStuck, setSearchStuck] = useState(false);
-  const [searchExpanded, setSearchExpanded] = useState(false);
-  const searchSentinelRef = useRef(null);
+  // Mobile-only "back to search" FAB at the bottom-right (mirrors the
+  // filter FAB on the bottom-left). Tapping it scrolls back to the top
+  // and focuses the search input.
   const searchInputRef = useRef(null);
-  useEffect(() => {
-    const el = searchSentinelRef.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        const stuck = !entry.isIntersecting;
-        setSearchStuck(stuck);
-        if (!stuck) setSearchExpanded(false);
-      },
-      { threshold: 0 }
-    );
-    io.observe(el);
-    return () => io.disconnect();
+  const onSearchFabTap = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Defer focus until the scroll is at least starting; iOS handles the
+    // smooth-scroll synchronously for short distances so a single rAF is
+    // enough — no setTimeout dance.
+    requestAnimationFrame(() => searchInputRef.current?.focus());
   }, []);
-  const onSearchTriggerClick = useCallback(() => {
-    if (searchStuck && !searchExpanded) {
-      setSearchExpanded(true);
-      // Defer focus until the expand transition has started so iOS doesn't
-      // jump-scroll to put a still-collapsed input into view.
-      requestAnimationFrame(() => searchInputRef.current?.focus());
-    }
-  }, [searchStuck, searchExpanded]);
 
   // Per-card lift+stagger entrance should only fire on tab switches, not on
   // every filter chip tap (otherwise filtering feels like the tab just opened).
@@ -225,17 +206,12 @@ export default function App() {
         onRecommend={() => setSubmitOpen(true)}
       />
 
-      <div ref={searchSentinelRef} className="mobile-search-sentinel" aria-hidden="true" />
-      <div
-        className={`mobile-search-bar ${searchStuck ? 'is-stuck' : ''} ${searchExpanded ? 'is-expanded' : ''}`}
-        onClick={onSearchTriggerClick}
-      >
+      <div className="mobile-search-bar">
         <SearchBox
           value={query}
           onChange={setQuery}
           placeholder={`Search ${activeTab.toLowerCase()}…`}
           inputRef={searchInputRef}
-          onBlur={() => setSearchExpanded(false)}
         />
       </div>
 
@@ -279,6 +255,17 @@ export default function App() {
         transition={{ type: 'spring', stiffness: 420, damping: 24 }}
       >
         <SlidersHorizontal size={20} />
+      </motion.button>
+
+      <motion.button
+        className="mobile-search-fab"
+        onClick={onSearchFabTap}
+        aria-label="Search"
+        whileHover={{ scale: 1.06, y: -2 }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: 'spring', stiffness: 420, damping: 24 }}
+      >
+        <Search size={20} />
       </motion.button>
 
       <AnimatePresence>
