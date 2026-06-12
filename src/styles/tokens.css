@@ -27,11 +27,14 @@
   --primary-active: #b01e0a;
   --on-primary:     #ffffff;
 
-  /* Hot coral accent — used for decorative brand highlights (title underline,
-     footer signature, required-field markers). Distinct from --primary so the
-     "reserved for active states" rule above stays clean.
-     Stored as raw RGB triplets so rgba(var(--accent-hot-rgb), <alpha>) works. */
-  --accent-hot-rgb: 255, 90, 70;
+  /* Single brand red. Previously --accent-hot-rgb was a separate coral
+     (255, 90, 70) used for decorative highlights — title underline, footer
+     signature, required-field marker — to keep --primary "reserved for
+     active states." User asked for one red, so the accent now points at
+     the same Rosso Corsa triplet (218, 41, 28 = #da291c). The token name
+     stays so existing call sites with rgba(var(--accent-hot-rgb), <alpha>)
+     keep working; they just resolve to the same red as buttons + focus. */
+  --accent-hot-rgb: 218, 41, 28;
 
   /* Legacy aliases so existing selectors continue to work */
   --bg-color:        var(--canvas);
