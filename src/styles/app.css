@@ -1835,6 +1835,13 @@ body.is-modal-open .rating-badge.tier-amazing::before { animation-play-state: pa
     content-visibility: auto;
     contain-intrinsic-size: auto 270px;
   }
+  /* Each .poster-badge has filter: drop-shadow(...10px) which forces a GPU
+     compositing layer per badge so WebKit can blur the shadow. With ~150
+     badged cards in the grid, that's 150 extra always-active GPU layers —
+     enough to crowd out the modal's own layer on iOS. The shadow is also
+     barely perceptible at phone size. Drop it on touch; the corner sticker
+     still reads fine without the soft halo. */
+  .poster-badge { filter: none; }
   /* Card demotion alone got us ~6 modals before a kill, up from ~1 — but
      each modal still pushes another big GPU layer into the budget. Two
      touch-only relaxations that don't change how the modal looks on a
