@@ -1082,7 +1082,8 @@ body.is-modal-open .rating-badge.tier-amazing::before { animation-play-state: pa
   overscroll-behavior: contain;
 }
 /* Bigger chip + score buttons inside the mobile sheet */
-.sheet .glass-chip { padding: 10px 16px; font-size: 0.85rem; min-height: 40px; }
+.sheet .glass-chip { padding: 10px 12px; font-size: 0.82rem; min-height: 40px; }
+.sheet .chip-row { gap: 6px; }
 .sheet .tier-stop { padding: 12px 8px; font-size: 0.85rem; min-height: 44px; }
 .sheet .glass-search {
   min-height: 40px;
