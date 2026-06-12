@@ -1841,16 +1841,11 @@ body.is-modal-open .rating-badge.tier-amazing::before { animation-play-state: pa
      ×230 cards. Pure cost, zero benefit on touch — drop it entirely. */
   .poster-overlay { display: none; }
   /* Card demotion alone got us ~6 modals before a kill, up from ~1 — but
-     each modal still pushes another big GPU layer into the budget. Two
-     touch-only relaxations that don't change how the modal looks on a
-     phone: drop the full-viewport backdrop blur (the dark surface stays,
-     just no frosting), and drop the blurred bg-image halo behind the
-     poster (the poster + tint already do the job at small sizes). */
-  .detail-backdrop {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    background: rgba(0, 0, 0, 0.78);
-  }
+     each modal still pushes another big GPU layer into the budget. One
+     touch-only relaxation that's barely visible at phone size: drop the
+     blurred bg-image halo behind the poster. (The .detail-backdrop's
+     own backdrop-filter blur stays — once content-visibility freed up
+     the per-card GPU budget there's plenty of headroom for that pass.) */
   .detail-poster-glow { display: none; }
   .search-clear {
     width: 32px;
