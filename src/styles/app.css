@@ -839,16 +839,25 @@ body.is-modal-open .rating-badge.tier-amazing::before { animation-play-state: pa
     padding: var(--space-5);
   }
   /* Search promoted out of the (sheet-hidden) sidebar to its own row right
-     under the tabs, so phone users can search without opening the filter
-     sheet. The .glass-search input styling already handles its appearance. */
+     under the tabs. Mirror .hero-content-wrap's frame so the search pill
+     aligns visually with the tabs row above it: same max-width, same
+     auto-centering, same horizontal padding (--space-4 = 16 px on mobile,
+     stepping up at the same 1100 px breakpoint hero-content-wrap uses). */
   .mobile-search-bar {
     display: block;
-    padding: 0 var(--space-5);
-    margin: var(--space-2) 0 var(--space-4);
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto var(--space-4);
+    padding: 0 var(--space-4);
   }
+  /* Match the tabs pill height (~44 px) — Apple HIG touch target — so the
+     two rows read as a paired stack. The 8 px vertical padding default on
+     .glass-search is fine; min-height does the rest. */
+  .mobile-search-bar .glass-search {
+    min-height: 44px;
+    padding: var(--space-2) var(--space-4);
+  }
+  .mobile-search-bar .glass-search input { font-size: 16px; }
   /* Hide the inline sidebar only — NOT the copy inside .sheet */
   .layout > .glass-sidebar { display: none; }
   .mobile-filter-fab {
