@@ -1801,24 +1801,16 @@ body.is-modal-open .rating-badge.tier-amazing::before { animation-play-state: pa
    ───────────────────────────────────────────────────────────── */
 @media (hover: none) {
   .detail-close { width: 44px; height: 44px; top: 12px; right: 12px; }
-  /* Touch devices: kill ALL backdrop-filter passes. iOS WebKit 18.x has been
-     terminating the WebContent process when many backdrop-filter layers are
-     allocated/freed in succession (modal open + close), and we'd already
-     stripped the most expensive ones — but evidently not enough. Set a
-     blanket override; the visual cost is solid translucent surfaces instead
-     of frosted ones, but the tab survives. */
-  *, *::before, *::after {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-  }
-  .detail-backdrop { background: rgba(0,0,0,0.78); }
-  .detail-poster-glow { display: none; }
-  /* And kill the per-card GPU compositing layers. Every MovieCard had
-     transform-style:preserve-3d + will-change:transform to power the desktop
-     mouse-tilt — but tilt is disabled on touch (see IS_TOUCH guard in
-     MovieCard), so those properties allocate ~230 unused GPU layers and
-     blow through iOS's GPU memory budget the moment a modal also wants a
-     layer. Demote them on touch. */
+  /* THE actual mobile crash fix: demote per-card GPU compositing layers.
+     .movie-card-inner had transform-style:preserve-3d + will-change:transform
+     to drive the desktop mouse-tilt — but tilt is disabled on touch (see
+     IS_TOUCH guard in MovieCard.jsx), so those properties allocate ~230
+     unused GPU layers and saturate iOS Safari's GPU memory budget (≈100 MB
+     per tab). The moment a modal also wants a compositing layer for its
+     backdrop-filter/exit-animation, WebKit terminates the WebContent
+     process — page "reloads" with navType=navigate and pageHide missing.
+     Demoting them on touch keeps the visual identical (no tilt was running)
+     and frees the GPU layers so modals don't trip the budget. */
   .movie-card-inner {
     transform-style: flat !important;
     will-change: auto !important;

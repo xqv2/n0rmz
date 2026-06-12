@@ -1,12 +1,5 @@
 import { useEffect, useState } from 'react';
 
-// Touch devices skip tint sampling — decoding the poster a second time just
-// to read 32×48 px of pixels adds real memory pressure on iOS Safari (which
-// will tab-kill once the page crosses ~200 MB), and the modal's backdrop blur
-// already pulls poster color through the surface visually.
-const IS_TOUCH = typeof window !== 'undefined'
-  && window.matchMedia?.('(hover: none), (pointer: coarse)').matches;
-
 // Sample a saturated color from a poster so the modal can pick up a hint of
 // the title's palette while staying mostly dark. Returns null until ready,
 // or if the image is CORS-locked / lacks vibrant pixels.
@@ -15,7 +8,7 @@ export const usePosterTint = (src) => {
 
   useEffect(() => {
     setTint(null);
-    if (!src || IS_TOUCH) return;
+    if (!src) return;
     const img = new Image();
     img.crossOrigin = 'anonymous';
     let cancelled = false;
