@@ -1823,12 +1823,17 @@ body.is-modal-open .rating-badge.tier-amazing::before { animation-play-state: pa
      heights (~10–15 cards). Massive drop in baseline image-cache and
      compositing cost — which is what was leaving no headroom for the
      modal's own allocations.
-     contain-intrinsic-size reserves space so the scroll height is correct
-     before WebKit has measured a card; the `auto` keyword lets it record
-     the real size after first measurement and reuse it for siblings. */
-  .movie-card {
+     Applied to .poster-container (NOT .movie-card) because content-visibility
+     implies contain:paint, which would clip the corner-sticker badges that
+     are positioned with negative offsets to overhang the card box.
+     .poster-container holds only the heavy poster image (the actual GPU
+     cost driver); badges sit as siblings of .poster-container under
+     .movie-card-inner and stay paint-uncontained so they overhang as
+     designed. contain-intrinsic-size reserves the poster's space (2/3
+     aspect-ratio at the column width) before WebKit measures it. */
+  .poster-container {
     content-visibility: auto;
-    contain-intrinsic-size: auto 320px;
+    contain-intrinsic-size: auto 270px;
   }
   /* Card demotion alone got us ~6 modals before a kill, up from ~1 — but
      each modal still pushes another big GPU layer into the budget. Two
