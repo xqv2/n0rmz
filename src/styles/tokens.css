@@ -21,10 +21,14 @@
   --muted:         #666666;
   --muted-soft:    #8f8f8f;
 
-  /* Brand accent — Rosso Corsa. Reserved for active states, dice/random,
-     and Amazing-tier badges. Never decorative. */
+  /* Brand accent — Rosso Corsa. The entire site uses this single red.
+     --primary-active aliases to the same value; the pressed/hover state
+     for buttons that referenced it relied on a slight darkening, but the
+     user prefers ONE red across the site, so press feedback comes from
+     Motion's whileTap scale + the button's existing opacity/shadow shifts
+     instead of a hue shift. */
   --primary:        #da291c;
-  --primary-active: #b01e0a;
+  --primary-active: #da291c;
   --on-primary:     #ffffff;
 
   /* Single brand red. Previously --accent-hot-rgb was a separate coral
