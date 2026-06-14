@@ -12953,5 +12953,91 @@
     "intense": false,
     "mindbending": false,
     "clever": false
+  },
+  {
+    "id": "show-ted-lasso-2020",
+    "slug": "ted-lasso-2020",
+    "title": "Ted Lasso",
+    "originalTitle": "Ted Lasso",
+    "year": 2020,
+    "type": "show",
+    "poster": "https://image.tmdb.org/t/p/w342/5fhZdwP1DVJ0FyVH6vrFdHwpXIn.jpg",
+    "genres": [
+      "Drama",
+      "Comedy"
+    ],
+    "language": "English",
+    "runtime": null,
+    "seasons": 4,
+    "episodes": 44,
+    "overview": "Ted Lasso, an American football coach, moves to England when he's hired to manage a soccer team—despite having no experience. With cynical players and a doubtful town, will he get them to see the Ted Lasso Way?",
+    "ratings": {
+      "tmdb": 8.3,
+      "voteCount": 2373,
+      "personal": null
+    },
+    "popularity": 37.1972,
+    "tmdbId": 97546,
+    "twist": false,
+    "scary": false,
+    "intense": false,
+    "mindbending": false,
+    "clever": false
+  },
+  {
+    "id": "game-americas-ass",
+    "slug": "americas-ass",
+    "title": "America's Ass",
+    "originalTitle": "America's Ass",
+    "year": 2019,
+    "type": "game",
+    "poster": "https://media.rawg.io/media/screenshots/066/066a7645046b5823c0188a99f9d0dccd.jpg",
+    "genres": [],
+    "language": null,
+    "runtime": null,
+    "seasons": null,
+    "episodes": null,
+    "overview": "Aim and shoot the shield.",
+    "ratings": {
+      "tmdb": null,
+      "voteCount": 0,
+      "personal": null
+    },
+    "popularity": 1,
+    "tmdbId": null,
+    "detailsUrl": "https://rawg.io/games/americas-ass",
+    "website": null,
+    "rawgId": 375778,
+    "rawgSlug": "americas-ass",
+    "developers": [
+      "GabsMontemor"
+    ],
+    "publishers": [],
+    "metacritic": null,
+    "esrbRating": null,
+    "playtime": null,
+    "platforms": [
+      {
+        "slug": "web",
+        "name": "Web"
+      }
+    ],
+    "stores": [
+      {
+        "slug": "itch",
+        "name": "itch.io",
+        "domain": "itch.io",
+        "url": "https://rawg.io/games/americas-ass"
+      }
+    ],
+    "screenshots": [
+      "https://media.rawg.io/media/screenshots/066/066a7645046b5823c0188a99f9d0dccd.jpg"
+    ],
+    "videos": [],
+    "twist": false,
+    "scary": false,
+    "intense": false,
+    "mindbending": false,
+    "clever": false
   }
 ]
