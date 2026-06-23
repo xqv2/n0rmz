@@ -704,6 +704,7 @@ body.is-modal-open .rating-badge.tier-amazing::before { animation-play-state: pa
   filter: drop-shadow(0 5px 10px rgba(0,0,0,0.55));
   transition: transform 0.25s var(--ease-out);
   will-change: transform;
+  backface-visibility: hidden;
 }
 .badge-amazing {
   top: -30px;
