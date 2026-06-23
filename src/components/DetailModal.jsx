@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
 import { X } from 'lucide-react';
-import { tierLabelFor, pickPosterBadge, STORE_META, simpleIconUrl, formatRuntime, scoreTier } from '../lib/metadata';
+import { tierLabelFor, pickPosterBadge, STORE_META, simpleIconUrl } from '../lib/metadata';
+import { formatRuntime, scoreTier } from '../lib/constants';
 import { tmdbDetailsUrl, providerWatchUrl, shortProviderName, sortProvidersByPopularity } from '../lib/tmdb';
 import { useModal } from '../hooks/useModal';
 import { usePosterTint } from '../hooks/usePosterTint';
