@@ -29,7 +29,13 @@ export const BADGE_FIELDS_FILM = [
   { key: 'therapeutic',      label: 'Therapeutic',       img: '/badges/therapeutic.png' },
 ];
 
-export const BADGE_FIELDS_GAMES = [];
+export const BADGE_FIELDS_GAMES = [
+  { key: 'nostalgia',    label: 'Nostalgic',     img: '/badges/games/nostalgia.png' },
+  { key: 'addictive',    label: 'Addictive',     img: '/badges/games/addictive.png' },
+  { key: 'coop',         label: 'Co-op',         img: '/badges/games/coop.png' },
+  { key: 'greatstory',   label: 'Great story',   img: '/badges/games/great-story.png' },
+  { key: 'immersive',    label: 'Immersive',     img: '/badges/games/immersive.png' },
+];
 
 export const badgeFieldsFor = (type) =>
   type === 'game' ? BADGE_FIELDS_GAMES : BADGE_FIELDS_FILM;
