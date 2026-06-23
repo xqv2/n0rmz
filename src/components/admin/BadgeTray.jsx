@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
-import { badgeFieldsFor } from '../../lib/badges';
+import { badgeFieldsFor } from '../../lib/metadata';
 
 const TRAY_GUESS_HEIGHT = 220;
 const SAFE_MARGIN = 12;

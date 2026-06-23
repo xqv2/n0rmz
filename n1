@@ -1,0 +1,44 @@
+✗ Build failed in 777ms
+✗ Build failed in 777ms
+error during build:
+src/components/DetailModal.jsx (4:67): "formatRuntime" is not exported by "src/lib/metadata.js", imported by "src/components/DetailModal.jsx".
+file: /Users/johnyvino/Documents/GitHub/n0rmz/src/components/DetailModal.jsx:4:67
+
+2: import { motion, useReducedMotion } from 'motion/react';
+3: import { X } from 'lucide-react';
+4: import { tierLabelFor, pickPosterBadge, STORE_META, simpleIconUrl, formatRuntime, scoreTier } from '../lib/metadata';
+                                                                      ^
+5: import { tmdbDetailsUrl, providerWatchUrl, shortProviderName, sortProvidersByPopularity } from '../lib/tmdb';
+6: import { useModal } from '../hooks/useModal';
+
+    at getRollupError (file:///Users/johnyvino/Documents/GitHub/n0rmz/node_modules/rollup/dist/es/shared/parseAst.js:317:41)
+    at error (file:///Users/johnyvino/Documents/GitHub/n0rmz/node_modules/rollup/dist/es/shared/parseAst.js:313:42)
+    at Module.error (file:///Users/johnyvino/Documents/GitHub/n0rmz/node_modules/rollup/dist/es/shared/node-entry.js:17396:16)
+    at Module.traceVariable (file:///Users/johnyvino/Documents/GitHub/n0rmz/node_modules/rollup/dist/es/shared/node-entry.js:17829:29)
+    at ModuleScope.findVariable (file:///Users/johnyvino/Documents/GitHub/n0rmz/node_modules/rollup/dist/es/shared/node-entry.js:15419:39)
+    at ReturnValueScope.findVariable (file:///Users/johnyvino/Documents/GitHub/n0rmz/node_modules/rollup/dist/es/shared/node-entry.js:5684:38)
+    at FunctionBodyScope.findVariable (file:///Users/johnyvino/Documents/GitHub/n0rmz/node_modules/rollup/dist/es/shared/node-entry.js:5684:38)
+    at Identifier.bind (file:///Users/johnyvino/Documents/GitHub/n0rmz/node_modules/rollup/dist/es/shared/node-entry.js:5451:40)
+    at CallExpression.bind (file:///Users/johnyvino/Documents/GitHub/n0rmz/node_modules/rollup/dist/es/shared/node-entry.js:2833:23)
+    at CallExpression.bind (file:///Users/johnyvino/Documents/GitHub/n0rmz/node_modules/rollup/dist/es/shared/node-entry.js:12528:15)
+error during build:
+src/components/DetailModal.jsx (4:67): "formatRuntime" is not exported by "src/lib/metadata.js", imported by "src/components/DetailModal.jsx".
+file: /Users/johnyvino/Documents/GitHub/n0rmz/src/components/DetailModal.jsx:4:67
+
+2: import { motion, useReducedMotion } from 'motion/react';
+3: import { X } from 'lucide-react';
+4: import { tierLabelFor, pickPosterBadge, STORE_META, simpleIconUrl, formatRuntime, scoreTier } from '../lib/metadata';
+                                                                      ^
+5: import { tmdbDetailsUrl, providerWatchUrl, shortProviderName, sortProvidersByPopularity } from '../lib/tmdb';
+6: import { useModal } from '../hooks/useModal';
+
+    at getRollupError (file:///Users/johnyvino/Documents/GitHub/n0rmz/node_modules/rollup/dist/es/shared/parseAst.js:317:41)
+    at error (file:///Users/johnyvino/Documents/GitHub/n0rmz/node_modules/rollup/dist/es/shared/parseAst.js:313:42)
+    at Module.error (file:///Users/johnyvino/Documents/GitHub/n0rmz/node_modules/rollup/dist/es/shared/node-entry.js:17396:16)
+    at Module.traceVariable (file:///Users/johnyvino/Documents/GitHub/n0rmz/node_modules/rollup/dist/es/shared/node-entry.js:17829:29)
+    at ModuleScope.findVariable (file:///Users/johnyvino/Documents/GitHub/n0rmz/node_modules/rollup/dist/es/shared/node-entry.js:15419:39)
+    at ReturnValueScope.findVariable (file:///Users/johnyvino/Documents/GitHub/n0rmz/node_modules/rollup/dist/es/shared/node-entry.js:5684:38)
+    at FunctionBodyScope.findVariable (file:///Users/johnyvino/Documents/GitHub/n0rmz/node_modules/rollup/dist/es/shared/node-entry.js:5684:38)
+    at Identifier.bind (file:///Users/johnyvino/Documents/GitHub/n0rmz/node_modules/rollup/dist/es/shared/node-entry.js:5451:40)
+    at CallExpression.bind (file:///Users/johnyvino/Documents/GitHub/n0rmz/node_modules/rollup/dist/es/shared/node-entry.js:2833:23)
+    at CallExpression.bind (file:///Users/johnyvino/Documents/GitHub/n0rmz/node_modules/rollup/dist/es/shared/node-entry.js:12528:15)

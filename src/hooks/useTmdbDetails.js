@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { TMDB_API_KEY, TMDB_BASE } from '../lib/tmdbKey';
+import { TMDB_API_KEY, TMDB_BASE } from '../lib/api';
 import { pickWatchRegion, dedupeProviders, mergeWatchmodeIntoProviders } from '../lib/tmdb';
 import { fetchWatchmodeSources, WATCHMODE_TYPE_PRIORITY } from '../lib/watchmode';
 

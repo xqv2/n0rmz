@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 import { Film, Gamepad2, Search, Tv, X } from 'lucide-react';
-import { RAWG_BASE } from '../../lib/rawg';
-import { useFocusTrap } from '../../hooks/useFocusTrap';
+import { RAWG_BASE } from '../../lib/api';
+import { useModal } from '../../hooks/useModal';
 
 // Admin-only TMDB + RAWG search. API keys come in via props from the admin's
 // own localStorage — they are NOT bundled into the deployed JS, so deploying
@@ -170,7 +170,7 @@ export const AddModal = ({ onClose, onAdded, defaultType = 'movie', apiKeys, ope
   const [status, setStatus] = useState(null);
   const fetching = status?.ok === null;
   const modalRef = useRef(null);
-  useFocusTrap(modalRef, true);
+  useModal(modalRef, true);
 
   useEffect(() => {
     const onKey = (e) => { if (e.key === 'Escape') onClose(); };

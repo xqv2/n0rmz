@@ -1,20 +1,14 @@
 import { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { motion, useMotionValue, useReducedMotion, useSpring } from 'motion/react';
 import { Check, Copy, Play } from 'lucide-react';
-import { tierLabelFor } from '../lib/tiers';
-import { pickPosterBadge } from '../lib/badges';
+import { tierLabelFor, pickPosterBadge } from '../lib/metadata';
 import { useInViewOnce } from '../hooks/useInViewOnce';
 import { PosterImage } from './PosterImage';
 
 // Coarse-pointer (touch) devices: drop the entrance animation entirely. Spring
 // + stagger across hundreds of cards is what makes the grid feel sluggish on
 // phones; off-screen cards already get `content-visibility: auto`.
-const IS_TOUCH = typeof window !== 'undefined'
-  && window.matchMedia?.('(hover: none), (pointer: coarse)').matches;
-
-// Max tilt in degrees — kept gentle so the parallax reads as polish, not a toy.
-const TILT_MAX = 7;
-const TILT_SPRING = { stiffness: 220, damping: 18, mass: 0.6 };
+import { IS_TOUCH, TILT_MAX, TILT_SPRING } from '../lib/constants';
 
 export const MovieCard = memo(({ movie, index = 0, columns = 5, activeTierFilter = null, onOpen, runIntro = true }) => {
   const personal = movie.ratings?.personal;

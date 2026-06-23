@@ -1,45 +1,17 @@
 import { useEffect, useRef } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
 import { X } from 'lucide-react';
-import { tierLabelFor } from '../lib/tiers';
-import { pickPosterBadge } from '../lib/badges';
+import { tierLabelFor, pickPosterBadge, STORE_META, simpleIconUrl, formatRuntime, scoreTier } from '../lib/metadata';
 import { tmdbDetailsUrl, providerWatchUrl, shortProviderName, sortProvidersByPopularity } from '../lib/tmdb';
-import { STORE_META, simpleIconUrl } from '../lib/gamePlatforms';
-import { useBodyScrollLock } from '../hooks/useBodyScrollLock';
-import { useFocusTrap } from '../hooks/useFocusTrap';
+import { useModal } from '../hooks/useModal';
 import { usePosterTint } from '../hooks/usePosterTint';
 import { useTmdbDetails } from '../hooks/useTmdbDetails';
 import { useRawgDetails } from '../hooks/useRawgDetails';
 import { GameMedia } from './GameMedia';
 import { PhotoStrip } from './PhotoStrip';
 import { PosterImage } from './PosterImage';
+import { TYPE_LABEL, META_PARENT, META_ITEM, IS_TOUCH } from '../lib/constants';
 
-const TYPE_LABEL = { movie: 'Movie', show: 'Show', game: 'Game' };
-
-// Cascade the meta-block contents in: title → notes → media → specs →
-// platforms. Each child fades+rises in turn so the modal feels assembled, not
-// dumped. Numbers are tuned to land just after the modal's scale-in finishes.
-const META_PARENT = {
-  hidden: { opacity: 1 },
-  show: { opacity: 1, transition: { staggerChildren: 0.035, delayChildren: 0.14 } },
-};
-const META_ITEM = {
-  hidden: { opacity: 0, y: 11 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.34, ease: [0.22, 1, 0.36, 1] } },
-};
-
-const formatRuntime = (mins) => {
-  if (!mins) return null;
-  if (mins < 60) return `${mins}m`;
-  const h = Math.floor(mins / 60);
-  const m = mins % 60;
-  return m ? `${h}h ${m}m` : `${h}h`;
-};
-
-const scoreTier = (score) => (score >= 75 ? 'good' : score >= 50 ? 'mixed' : 'bad');
-
-const IS_TOUCH = typeof window !== 'undefined'
-  && window.matchMedia?.('(hover: none), (pointer: coarse)').matches;
 
 export const DetailModal = ({ movie, onClose }) => {
   const tint = usePosterTint(movie?.poster);
@@ -51,8 +23,7 @@ export const DetailModal = ({ movie, onClose }) => {
   // Same idea for games — RAWG detail/screenshots/videos in parallel.
   const fetchedGame = useRawgDetails(movie);
 
-  useBodyScrollLock(!!movie);
-  useFocusTrap(modalRef, !!movie);
+  useModal(modalRef, !!movie);
   useEffect(() => {
     const onKey = (e) => { if (e.key === 'Escape') onClose(); };
     window.addEventListener('keydown', onKey);

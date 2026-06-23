@@ -1,5 +1,5 @@
 import { motion, LayoutGroup } from 'motion/react';
-import { TABS, ICON_FOR_TAB } from '../lib/tabs';
+import { TABS, ICON_FOR_TAB } from '../lib/metadata';
 
 // Tab bar with an animated active background that slides between tabs.
 // `layoutId` keeps the public site and the admin from sharing the same

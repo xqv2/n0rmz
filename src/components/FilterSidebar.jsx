@@ -1,5 +1,4 @@
-import { MY_SCORE_TIERS } from '../lib/tiers';
-import { PLATFORM_META, faviconUrl, simpleIconUrl } from '../lib/gamePlatforms';
+import { MY_SCORE_TIERS, PLATFORM_META, faviconUrl, simpleIconUrl } from '../lib/metadata';
 import { Chip } from './Chip';
 import { SearchBox } from './SearchBox';
 

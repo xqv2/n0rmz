@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import { motion, AnimatePresence, LayoutGroup } from 'motion/react';
 import { Loader2, Plus, Save, Search, Settings, X } from 'lucide-react';
-import { BADGE_FIELDS_FILM, BADGE_FIELDS_GAMES, badgeFieldsFor } from '../../lib/badges';
-import { TABS, TYPE_FOR_TAB, ICON_FOR_TAB } from '../../lib/tabs';
+import { BADGE_FIELDS_FILM, BADGE_FIELDS_GAMES, badgeFieldsFor } from '../../lib/metadata';
+import { TABS, TYPE_FOR_TAB, ICON_FOR_TAB } from '../../lib/metadata';
 import { commitJson } from '../../lib/github';
 import { loadEdits, saveEdits } from '../../lib/storage';
 import { useMoviesData } from '../../hooks/useMoviesData';

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { RAWG_BASE } from '../lib/rawg';
+import { RAWG_BASE } from '../lib/api';
 
 const RAWG_KEY = import.meta.env.VITE_RAWG_API_KEY;
 

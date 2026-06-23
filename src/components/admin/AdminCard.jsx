@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Trash2 } from 'lucide-react';
-import { tierLabelFor, SCORE_TIERS } from '../../lib/tiers';
-import { pickPosterBadge } from '../../lib/badges';
+import { tierLabelFor, SCORE_TIERS, pickPosterBadge } from '../../lib/metadata';
 import { ConfirmDialog } from './ConfirmDialog';
 
 export const AdminCard = ({ movie, edited, onPosterClick, onScore, onNotes, onDelete, onRestore }) => {

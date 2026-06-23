@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 // instance gets a fresh chance with the new URL. Without this, a stale `true`
 // from an earlier render leaves the placeholder showing even after the URL
 // has changed to one that loads fine.
-export const PosterImage = ({ src, alt, fallback, className = '', ...rest }) => {
+export const PosterImage = ({ src, alt, fallback, className = '', loading, decoding }) => {
   const [broken, setBroken] = useState(false);
 
   useEffect(() => {
@@ -25,7 +25,8 @@ export const PosterImage = ({ src, alt, fallback, className = '', ...rest }) => 
       alt={alt}
       className={className}
       onError={() => setBroken(true)}
-      {...rest}
+      loading={loading}
+      decoding={decoding}
     />
   );
 };

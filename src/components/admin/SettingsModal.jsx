@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { motion } from 'motion/react';
 import { X } from 'lucide-react';
-import { useFocusTrap } from '../../hooks/useFocusTrap';
+import { useModal } from '../../hooks/useModal';
 
 export const DEFAULT_REPO = 'johnyvino/c-';
 export const DEFAULT_BRANCH = 'main';
@@ -15,7 +15,7 @@ export const SettingsModal = ({ initial, onSave, onClose, dismissable, simple })
   const [err, setErr] = useState(null);
   const [showAdvanced, setShowAdvanced] = useState(false);
   const modalRef = useRef(null);
-  useFocusTrap(modalRef, true);
+  useModal(modalRef, true);
 
   const save = () => {
     if (!token.trim()) return setErr('Token is required.');

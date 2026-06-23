@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 import { Check, Send, X } from 'lucide-react';
-import { useFocusTrap } from '../hooks/useFocusTrap';
+import { useModal } from '../hooks/useModal';
 
 const FORM_ENDPOINT = 'https://formspree.io/f/xpqeqyao';
 
@@ -11,7 +11,7 @@ export const SubmitModal = ({ onClose }) => {
   const [done, setDone] = useState(false);
   const [error, setError] = useState(null);
   const modalRef = useRef(null);
-  useFocusTrap(modalRef, true);
+  useModal(modalRef, true);
 
   useEffect(() => {
     const onKey = (e) => { if (e.key === 'Escape') onClose(); };
