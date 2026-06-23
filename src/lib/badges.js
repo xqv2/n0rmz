@@ -25,16 +25,11 @@ export const BADGE_FIELDS_FILM = [
   { key: 'nostalgic',        label: 'Nostalgic',         img: '/badges/nostalgic.png' },
   { key: 'rewatchable',      label: 'Rewatchable',       img: '/badges/rewatchable.png' },
   { key: 'unique',           label: 'Unique',            img: '/badges/unique.png' },
+  { key: 'wellwritten',      label: 'Well written',      img: '/badges/wellwritten.png' },
+  { key: 'therapeutic',      label: 'Therapeutic',       img: '/badges/therapeutic.png' },
 ];
 
-export const BADGE_FIELDS_GAMES = [
-  { key: 'nostalgia',       label: 'Nostalgia',        img: '/badges/games/nostalgia.png' },
-  { key: 'chargrowth',      label: 'Character growth', img: '/badges/games/chargrowth.png' },
-  { key: 'difficulty',      label: 'Difficulty',       img: '/badges/games/difficulty.png' },
-  { key: 'funfactor',       label: 'Fun factor',       img: '/badges/games/funfactor.png' },
-  { key: 'replayvalue',     label: 'Replay value',     img: '/badges/games/replayvalue.png' },
-  { key: 'immersiveworld',  label: 'Immersive world',  img: '/badges/games/immersiveworld.png' },
-];
+export const BADGE_FIELDS_GAMES = [];
 
 export const badgeFieldsFor = (type) =>
   type === 'game' ? BADGE_FIELDS_GAMES : BADGE_FIELDS_FILM;
