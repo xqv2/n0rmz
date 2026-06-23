@@ -21723,7 +21723,8 @@
     },
     "metacritic": null,
     "playtime": 6,
-    "posterVertical": "/posters/olympic-games-tokyo-2020-vertical.jpg"
+    "posterVertical": "/posters/olympic-games-tokyo-2020-vertical.jpg",
+    "coop": true
   },
   {
     "id": "game-need-for-speed-heat",
@@ -21912,7 +21913,8 @@
     },
     "metacritic": 86,
     "playtime": 4,
-    "posterVertical": "/posters/overcooked-all-you-can-eat-vertical.jpg"
+    "posterVertical": "/posters/overcooked-all-you-can-eat-vertical.jpg",
+    "coop": true
   },
   {
     "id": "game-mortal-kombat-11",
@@ -22437,7 +22439,8 @@
     "esrbRating": null,
     "metacritic": null,
     "playtime": null,
-    "posterVertical": "/posters/arcade-archives-circus-charlie-vertical.png"
+    "posterVertical": "/posters/arcade-archives-circus-charlie-vertical.png",
+    "nostalgia": true
   },
   {
     "id": "game-contra-arcade",
