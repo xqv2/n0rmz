@@ -21022,7 +21022,9 @@
     },
     "metacritic": 88,
     "playtime": 10,
-    "posterVertical": "/posters/it-takes-two-vertical.jpg"
+    "posterVertical": "/posters/it-takes-two-vertical.jpg",
+    "addictive": false,
+    "coop": true
   },
   {
     "id": "game-ghost-of-tsushima",
@@ -21103,7 +21105,8 @@
     },
     "metacritic": 83,
     "playtime": null,
-    "posterVertical": "/posters/ghost-of-tsushima.jpeg"
+    "posterVertical": "/posters/ghost-of-tsushima.jpeg",
+    "immersive": true
   },
   {
     "id": "game-assassins-creed-ii",
@@ -21198,7 +21201,8 @@
     },
     "metacritic": 89,
     "playtime": 14,
-    "posterVertical": "/posters/assassins-creed-ii-vertical.jpg"
+    "posterVertical": "/posters/assassins-creed-ii-vertical.jpg",
+    "greatstory": true
   },
   {
     "id": "game-black-myth-wukong",
@@ -21283,7 +21287,8 @@
     },
     "metacritic": null,
     "playtime": null,
-    "posterVertical": "/posters/black-myth-wukong-vertical.jpg"
+    "posterVertical": "/posters/black-myth-wukong-vertical.jpg",
+    "immersive": true
   },
   {
     "id": "game-assassins-creed-odyssey",
@@ -22183,7 +22188,8 @@
     },
     "metacritic": 88,
     "playtime": 16,
-    "posterVertical": "/posters/assassins-creed-brotherhood-vertical.jpg"
+    "posterVertical": "/posters/assassins-creed-brotherhood-vertical.jpg",
+    "greatstory": true
   },
   {
     "id": "game-need-for-speed-most-wanted",
@@ -23234,7 +23240,8 @@
     "intense": false,
     "mindbending": false,
     "clever": false,
-    "posterVertical": "/posters/temple-run-vertical.jpg"
+    "posterVertical": "/posters/temple-run-vertical.jpg",
+    "addictive": true
   },
   {
     "id": "game-paper-toss",
@@ -23643,7 +23650,8 @@
     "scary": false,
     "intense": false,
     "mindbending": false,
-    "clever": false
+    "clever": false,
+    "nostalgia": true
   },
   {
     "id": "show-ted-lasso-2020",
