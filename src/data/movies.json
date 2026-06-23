@@ -2220,7 +2220,8 @@
       "https://image.tmdb.org/t/p/w780/fprGDZ55Gjyhp3aCvo3wFZFm9Vq.jpg",
       "https://image.tmdb.org/t/p/w780/fRYwJGCmFMtDVGzrWmsfsGKI1YG.jpg",
       "https://image.tmdb.org/t/p/w780/wkkXSNglIS4P1MZaxVEQDG5blhS.jpg"
-    ]
+    ],
+    "unique": true
   },
   {
     "id": "movie-pirates-of-the-caribbean-dead-man-s-chest-2006",
