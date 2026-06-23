@@ -23704,62 +23704,6 @@
     ]
   },
   {
-    "id": "game-americas-ass",
-    "slug": "americas-ass",
-    "title": "America's Ass",
-    "originalTitle": "America's Ass",
-    "year": 2019,
-    "type": "game",
-    "poster": "https://media.rawg.io/media/screenshots/066/066a7645046b5823c0188a99f9d0dccd.jpg",
-    "genres": [],
-    "language": null,
-    "runtime": null,
-    "seasons": null,
-    "episodes": null,
-    "overview": "Aim and shoot the shield.",
-    "ratings": {
-      "tmdb": null,
-      "voteCount": 0,
-      "personal": null
-    },
-    "popularity": 1,
-    "tmdbId": null,
-    "detailsUrl": "https://rawg.io/games/americas-ass",
-    "website": null,
-    "rawgId": 375778,
-    "rawgSlug": "americas-ass",
-    "developers": [
-      "GabsMontemor"
-    ],
-    "publishers": [],
-    "metacritic": null,
-    "esrbRating": null,
-    "playtime": null,
-    "platforms": [
-      {
-        "slug": "web",
-        "name": "Web"
-      }
-    ],
-    "stores": [
-      {
-        "slug": "itch",
-        "name": "itch.io",
-        "domain": "itch.io",
-        "url": "https://rawg.io/games/americas-ass"
-      }
-    ],
-    "screenshots": [
-      "https://media.rawg.io/media/screenshots/066/066a7645046b5823c0188a99f9d0dccd.jpg"
-    ],
-    "videos": [],
-    "twist": false,
-    "scary": false,
-    "intense": false,
-    "mindbending": false,
-    "clever": false
-  },
-  {
     "id": "movie-national-treasure-2004",
     "slug": "national-treasure-2004",
     "title": "National Treasure",
