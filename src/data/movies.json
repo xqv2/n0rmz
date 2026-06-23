@@ -28,7 +28,7 @@
     "scary": false,
     "intense": false,
     "mindbending": false,
-    "clever": true,
+    "clever": false,
     "mustsee": false,
     "notes": "walt dropping the mr white voice and becoming heisenberg, paced perfectly",
     "cast": [
@@ -79,7 +79,8 @@
       "https://image.tmdb.org/t/p/w780/n3u3kgNttY1F5Ixi5bMY9BwZImQ.jpg",
       "https://image.tmdb.org/t/p/w780/sp1RSDvoVsbvDouQx1A75ebU35e.jpg",
       "https://image.tmdb.org/t/p/w780/yXSzo0VU1Q1QaB7Xg5Hqe4tXXA3.jpg"
-    ]
+    ],
+    "therapeutic": true
   },
   {
     "id": "show-reacher-2022",
@@ -186,7 +187,7 @@
     "intense": false,
     "mindbending": false,
     "clever": false,
-    "mustsee": true,
+    "mustsee": false,
     "notes": "jimmy to saul to gene, slow motion car crash i couldn't look away from",
     "cast": [
       "Bob Odenkirk",
@@ -243,7 +244,8 @@
       "https://image.tmdb.org/t/p/w780/fhVjFMVFW53w2YY75VR9lfii416.jpg",
       "https://image.tmdb.org/t/p/w780/ljZArpX2RqIW2Pam3zlgexRi3lG.jpg",
       "https://image.tmdb.org/t/p/w780/AlqSvfI6bmxh31iaJTgjNSemF3D.jpg"
-    ]
+    ],
+    "therapeutic": true
   },
   {
     "id": "movie-interstellar-2014",
@@ -1138,7 +1140,8 @@
       "https://image.tmdb.org/t/p/w780/47ENtijFRt1QFnbbbdQ7gllAPUw.jpg",
       "https://image.tmdb.org/t/p/w780/vwmuOvN4avZJlXQukXbsSJ6QbEU.jpg",
       "https://image.tmdb.org/t/p/w780/d6ziuOqDQPSnxLAT1LUfClWXAo.jpg"
-    ]
+    ],
+    "therapeutic": true
   },
   {
     "id": "movie-harry-potter-and-the-philosopher-s-stone-2001",
@@ -3575,7 +3578,7 @@
     "scary": false,
     "intense": false,
     "mindbending": false,
-    "clever": false,
+    "clever": true,
     "notes": "shahid kapoor printing notes with artist hands, michael's quiet menace owns it",
     "cast": [
       "Shahid Kapoor",
@@ -13462,7 +13465,8 @@
       "https://image.tmdb.org/t/p/w780/1GVtDdFZocA9MSkCfginoguv1Q1.jpg",
       "https://image.tmdb.org/t/p/w780/AsDnGpzLfbcjRwWfW0ekneUcsKl.jpg",
       "https://image.tmdb.org/t/p/w780/l8WaI8DC7JoVuJ1PPfcFDWJ8IGB.jpg"
-    ]
+    ],
+    "wellwritten": true
   },
   {
     "id": "show-dragon-booster-2004",
@@ -14194,7 +14198,8 @@
       "https://image.tmdb.org/t/p/w780/9A2sUOLhdeYSnPGS1DR0fCFku3j.jpg",
       "https://image.tmdb.org/t/p/w780/ijYXKEdO8cu8TcsJVLjw0f7xEYX.jpg",
       "https://image.tmdb.org/t/p/w780/wbUDQ6YsfarjMvfUGyq8p58Yj7u.jpg"
-    ]
+    ],
+    "thrilling": true
   },
   {
     "id": "movie-extinction-2018",
