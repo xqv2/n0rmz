@@ -5572,13 +5572,6 @@
         "directUrl": "https://www.hulu.com/watch/05acd25e-91b8-41b9-8e55-c34596b9dcdc"
       },
       {
-        "provider_id": "wm-disney",
-        "provider_name": "Disney+",
-        "logo_path": null,
-        "directUrl": "https://www.disneyplus.com/browse/entity-05acd25e-91b8-41b9-8e55-c34596b9dcdc",
-        "domain": "disneyplus.com"
-      },
-      {
         "provider_id": "wm-vudu",
         "provider_name": "Fandango at Home",
         "logo_path": null,
@@ -6091,6 +6084,13 @@
         "logo_path": null,
         "directUrl": "https://ondemand.spectrum.net/movies/28801/oceans-eleven/",
         "domain": "ondemand.spectrum.net"
+      },
+      {
+        "provider_id": "wm-google-play",
+        "provider_name": "Google Play",
+        "logo_path": null,
+        "directUrl": "https://play.google.com/store/movies/details?id=mz4IrV6Ku-U&PAffiliateID=1101l32vn",
+        "domain": "play.google.com"
       }
     ],
     "score": 75,
@@ -6417,7 +6417,7 @@
         "provider_id": 10,
         "provider_name": "Amazon Video",
         "display_priority": 7,
-        "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.aaa9f71e-cff2-c0ff-32b1-14114fbd3897"
+        "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.2224a1aa-76a5-47fc-913d-07e1d163d445"
       },
       {
         "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -6535,13 +6535,6 @@
         "logo_path": null,
         "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.7c27b498-d2f2-42c4-8f5b-46de9d3b3c16",
         "domain": "primevideo.com"
-      },
-      {
-        "provider_id": "wm-hulu",
-        "provider_name": "HBO (Via Hulu)",
-        "logo_path": null,
-        "directUrl": "https://www.hulu.com/watch/9b2fa834-68b5-4f93-b4b3-804d567a1939",
-        "domain": "hulu.com"
       },
       {
         "provider_id": "wm-youtube",
@@ -6726,7 +6719,7 @@
         "provider_id": 3,
         "provider_name": "Google Play Movies",
         "display_priority": 17,
-        "directUrl": "https://play.google.com/store/movies/details?id=m0ppeYBqdGo&PAffiliateID=1101l32vn"
+        "directUrl": null
       },
       {
         "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
@@ -6900,7 +6893,7 @@
         "provider_id": 1957,
         "provider_name": "Cineverse",
         "display_priority": 164,
-        "directUrl": "https://www.cineverse.com/watch/1000000003570/Fist-of-Fury"
+        "directUrl": null
       },
       {
         "logo_path": "/xfKqqWYYIyvjECOFOaYtJdD7gl3.jpg",
@@ -6914,7 +6907,7 @@
         "provider_id": 73,
         "provider_name": "Tubi TV",
         "display_priority": 348,
-        "directUrl": "https://tubitv.com/movies/497642"
+        "directUrl": null
       },
       {
         "logo_path": "/5MsbQCp7FpYr3INLpeKDLJrlDh8.jpg",
@@ -6936,13 +6929,6 @@
         "logo_path": null,
         "directUrl": "https://tv.youtube.com/browse/UCgISd4aIiE_ooKyTpUiAukw",
         "domain": "youtube.com"
-      },
-      {
-        "provider_id": "wm-directv on demand",
-        "provider_name": "DirecTV On Demand",
-        "logo_path": null,
-        "directUrl": "https://stream.directv.com/discover/movies/program/VIDEO_PROGRAM/1055d43d-b483-56f3-1174-dc5fd23d239f?source=EDDSDSRLG0000000O",
-        "domain": "stream.directv.com"
       },
       {
         "provider_id": "wm-appletv",
@@ -7032,13 +7018,6 @@
         "provider_name": "FXNow",
         "display_priority": 41,
         "directUrl": null
-      },
-      {
-        "provider_id": "wm-fx",
-        "provider_name": "FX",
-        "logo_path": null,
-        "directUrl": "https://fxnow.fxnetworks.com/movies-and-specials/free-guy",
-        "domain": "fxnow.fxnetworks.com"
       },
       {
         "provider_id": "wm-directv on demand",
@@ -7303,8 +7282,15 @@
         "provider_id": "wm-prime",
         "provider_name": "Paramount+ (Via Amazon Prime)",
         "logo_path": null,
-        "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.0467c228-81f8-4a1a-ab78-50a7f86bbfed",
+        "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.4aa9f75c-03d9-99b7-f7c0-a9e43926ec58",
         "domain": "primevideo.com"
+      },
+      {
+        "provider_id": "wm-directv on demand",
+        "provider_name": "DirecTV On Demand",
+        "logo_path": null,
+        "directUrl": "https://stream.directv.com/discover/movies/program/VIDEO_PROGRAM/6c25b644-c092-d2e0-a7ce-3b5b16155e83?source=EDDSDSRLG0000000O",
+        "domain": "stream.directv.com"
       },
       {
         "provider_id": "wm-appletv",
@@ -7319,6 +7305,13 @@
         "logo_path": null,
         "directUrl": "https://athome.fandango.com/content/browse/details/Taken-Extended-Cut-/182897",
         "domain": "vudu.com"
+      },
+      {
+        "provider_id": "wm-google-play",
+        "provider_name": "Google Play",
+        "logo_path": null,
+        "directUrl": "https://play.google.com/store/movies/details?id=FdN1NmPE50g&PAffiliateID=1101l32vn",
+        "domain": "play.google.com"
       }
     ],
     "score": 74,
@@ -7379,13 +7372,6 @@
         "provider_name": "Hulu",
         "display_priority": 6,
         "directUrl": "https://www.hulu.com/watch/ce42e744-f65d-4d46-9324-80aec621fc87"
-      },
-      {
-        "provider_id": "wm-disney",
-        "provider_name": "Disney+",
-        "logo_path": null,
-        "directUrl": "https://www.disneyplus.com/browse/entity-ce42e744-f65d-4d46-9324-80aec621fc87",
-        "domain": "disneyplus.com"
       },
       {
         "provider_id": "wm-directv on demand",
@@ -7654,13 +7640,6 @@
         "logo_path": null,
         "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.840682d0-9a41-4a44-9fc6-ed9c43a5d4de",
         "domain": "primevideo.com"
-      },
-      {
-        "provider_id": "wm-disney",
-        "provider_name": "Disney+",
-        "logo_path": null,
-        "directUrl": "https://www.disneyplus.com/browse/entity-9a5509d9-502d-4f95-ab6f-89c134e7c57d",
-        "domain": "disneyplus.com"
       },
       {
         "provider_id": "wm-appletv",
@@ -8587,13 +8566,6 @@
         "directUrl": "https://www.hulu.com/watch/cab878c4-ffb2-4fe6-a74a-aa2345bab6a5"
       },
       {
-        "provider_id": "wm-disney",
-        "provider_name": "Disney+",
-        "logo_path": null,
-        "directUrl": "https://www.disneyplus.com/browse/entity-cab878c4-ffb2-4fe6-a74a-aa2345bab6a5",
-        "domain": "disneyplus.com"
-      },
-      {
         "provider_id": "wm-vudu",
         "provider_name": "Fandango at Home",
         "logo_path": null,
@@ -8613,13 +8585,6 @@
         "logo_path": null,
         "directUrl": "https://tv.apple.com/us/movie/the-intern/umc.cmc.1wsp9hqbc6n1c87rb9wrudikf?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A1041445878",
         "domain": "tv.apple.com"
-      },
-      {
-        "provider_id": "wm-google-play",
-        "provider_name": "Google Play",
-        "logo_path": null,
-        "directUrl": "https://play.google.com/store/movies/details?id=dso8h2rViG8&PAffiliateID=1101l32vn",
-        "domain": "play.google.com"
       }
     ],
     "score": 72,
@@ -8808,10 +8773,17 @@
         "domain": "youtube.com"
       },
       {
+        "provider_id": "wm-philo",
+        "provider_name": "Philo",
+        "logo_path": null,
+        "directUrl": "https://www.philo.com/player/show/U2hvdzo2MDg1NDg4OTk2NDg0NDE5NjI",
+        "domain": "philo.com"
+      },
+      {
         "provider_id": "wm-vudu",
         "provider_name": "Fandango at Home",
         "logo_path": null,
-        "directUrl": "https://athome.fandango.com/content/browse/details/The-Da-Vinci-Code/64922",
+        "directUrl": "https://athome.fandango.com/content/browse/details/The-Da-Vinci-Code-Unrated-/442883",
         "domain": "vudu.com"
       },
       {
@@ -9568,7 +9540,7 @@
         "provider_id": 1899,
         "provider_name": "HBO Max",
         "display_priority": 155,
-        "directUrl": "https://play.hbomax.com/show/18748f4a-7f91-49d0-b4d0-d7b15af06305?utm_source=universal_search"
+        "directUrl": "https://play.hbomax.com/show/a9931d9e-2095-4e34-bc99-704d43e8d447?utm_source=universal_search"
       },
       {
         "provider_id": "wm-prime",
@@ -9693,7 +9665,7 @@
         "provider_id": 538,
         "provider_name": "Plex",
         "display_priority": 126,
-        "directUrl": null
+        "directUrl": "https://watch.plex.tv/movie/limitless?utm_source=&utm_medium=deeplink"
       },
       {
         "logo_path": "/27WMfRN7pQE3j5Khm8fPM7vYyLV.jpg",
@@ -9714,7 +9686,21 @@
         "provider_id": 73,
         "provider_name": "Tubi TV",
         "display_priority": 348,
-        "directUrl": null
+        "directUrl": "https://tubitv.com/movies/100031793"
+      },
+      {
+        "provider_id": "wm-pluto tv",
+        "provider_name": "Pluto TV",
+        "logo_path": null,
+        "directUrl": "https://pluto.tv/on-demand/movies/limitless-2011-1-1?utm_medium=deeplink&utm_source=",
+        "domain": "pluto.tv"
+      },
+      {
+        "provider_id": "wm-directv on demand",
+        "provider_name": "DirecTV On Demand",
+        "logo_path": null,
+        "directUrl": "https://stream.directv.com/discover/movies/program/VIDEO_PROGRAM/d13e6a0e-60b9-2e15-d3da-3bfceda07718?source=EDDSDSRLG0000000O",
+        "domain": "stream.directv.com"
       },
       {
         "provider_id": "wm-appletv",
@@ -9729,6 +9715,13 @@
         "logo_path": null,
         "directUrl": "https://athome.fandango.com/content/browse/details/Limitless/192917",
         "domain": "vudu.com"
+      },
+      {
+        "provider_id": "wm-google-play",
+        "provider_name": "Google Play",
+        "logo_path": null,
+        "directUrl": "https://play.google.com/store/movies/details?id=tv7sP_IFhFs&PAffiliateID=1101l32vn",
+        "domain": "play.google.com"
       }
     ],
     "score": 72,
@@ -9875,7 +9868,7 @@
         "provider_id": "wm-fubotv",
         "provider_name": "fuboTV",
         "logo_path": null,
-        "directUrl": "https://www.fubo.tv/welcome/program/MV008888230000?irmp=1206980&irad=599309",
+        "directUrl": "https://www.fubo.tv/welcome/program/MV004791520000?irmp=1206980&irad=599309",
         "domain": "fubo.tv"
       },
       {
@@ -10117,7 +10110,7 @@
         "provider_id": 73,
         "provider_name": "Tubi TV",
         "display_priority": 348,
-        "directUrl": null
+        "directUrl": "https://tubitv.com/movies/664742"
       },
       {
         "provider_id": "wm-directv on demand",
@@ -10757,13 +10750,6 @@
         "logo_path": null,
         "directUrl": "https://tv.apple.com/us/movie/upgrade/umc.cmc.5y4gtzpaftor940ypobn1m0as?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A1413558054",
         "domain": "tv.apple.com"
-      },
-      {
-        "provider_id": "wm-google-play",
-        "provider_name": "Google Play",
-        "logo_path": null,
-        "directUrl": "https://play.google.com/store/movies/details?id=xJsagYFY0RM&PAffiliateID=1101l32vn",
-        "domain": "play.google.com"
       }
     ],
     "score": 75,
@@ -11316,13 +11302,6 @@
         "domain": "youtube.com"
       },
       {
-        "provider_id": "wm-fubotv",
-        "provider_name": "fuboTV",
-        "logo_path": null,
-        "directUrl": "https://www.fubo.tv/welcome/program/MV003408530000?irmp=1206980&irad=599309",
-        "domain": "fubo.tv"
-      },
-      {
         "provider_id": "wm-vudu",
         "provider_name": "Fandango at Home",
         "logo_path": null,
@@ -11615,7 +11594,7 @@
         "provider_id": 9,
         "provider_name": "Amazon Prime Video",
         "display_priority": 3,
-        "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.aab44c43-d1bf-e9bc-ab23-a2765bc19a2a"
+        "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.dcb44c43-cc1f-f6c6-32b6-589b6c2c6580"
       },
       {
         "provider_id": "wm-hulu",
@@ -11744,49 +11723,7 @@
         "provider_id": 257,
         "provider_name": "fuboTV",
         "display_priority": 9,
-        "directUrl": "https://www.fubo.tv/welcome/program/MV002070150000?irmp=1206980&irad=599309"
-      },
-      {
-        "provider_id": "wm-youtube",
-        "provider_name": "YouTube TV",
-        "logo_path": null,
-        "directUrl": "https://tv.youtube.com/browse/UCXhMaS-ASNMmXRB-7vIqX-g",
-        "domain": "youtube.com"
-      },
-      {
-        "provider_id": "wm-directv on demand",
-        "provider_name": "DirecTV On Demand",
-        "logo_path": null,
-        "directUrl": "https://stream.directv.com/discover/movies/program/VIDEO_PROGRAM/97bc1507-5d4c-62db-8dd4-35fea2a2eee6?source=EDDSDSRLG0000000O",
-        "domain": "stream.directv.com"
-      },
-      {
-        "provider_id": "wm-appletv",
-        "provider_name": "AppleTV",
-        "logo_path": null,
-        "directUrl": "https://tv.apple.com/us/movie/jumper/umc.cmc.93rutvfbpri6js5qz546u2lg?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A276580756",
-        "domain": "tv.apple.com"
-      },
-      {
-        "provider_id": "wm-prime",
-        "provider_name": "Amazon",
-        "logo_path": null,
-        "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.02a9f6f4-c1f4-43fb-5ead-996d581a22fa",
-        "domain": "primevideo.com"
-      },
-      {
-        "provider_id": "wm-vudu",
-        "provider_name": "Fandango at Home",
-        "logo_path": null,
-        "directUrl": "https://athome.fandango.com/content/browse/details/Jumper/133479",
-        "domain": "vudu.com"
-      },
-      {
-        "provider_id": "wm-google-play",
-        "provider_name": "Google Play",
-        "logo_path": null,
-        "directUrl": "https://play.google.com/store/movies/details?id=3BgwRL3wOy0&PAffiliateID=1101l32vn",
-        "domain": "play.google.com"
+        "directUrl": null
       }
     ],
     "score": 62,
@@ -11847,49 +11784,14 @@
         "provider_id": 15,
         "provider_name": "Hulu",
         "display_priority": 6,
-        "directUrl": "https://www.hulu.com/watch/d00d3a11-920a-4711-93d7-e225c0be9f45"
+        "directUrl": null
       },
       {
         "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
         "provider_id": 2303,
         "provider_name": "Paramount Plus Premium",
         "display_priority": 14,
-        "directUrl": "https://www.paramountplus.com/movies/transformers/96pgzTLYyv4UektHcH6AfMx2WieY26X4?searchReferral=publisher&source=search-feeds"
-      },
-      {
-        "provider_id": "wm-prime",
-        "provider_name": "Paramount+ (Via Amazon Prime)",
-        "logo_path": null,
-        "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.faa9f782-17e4-e646-709e-d2a73681e7ef",
-        "domain": "primevideo.com"
-      },
-      {
-        "provider_id": "wm-disney",
-        "provider_name": "Disney+",
-        "logo_path": null,
-        "directUrl": "https://www.disneyplus.com/browse/entity-1aa3c31a-0998-44df-862a-8ab7acf02b7c",
-        "domain": "disneyplus.com"
-      },
-      {
-        "provider_id": "wm-vudu",
-        "provider_name": "Fandango at Home",
-        "logo_path": null,
-        "directUrl": "https://athome.fandango.com/content/browse/details/Transformers/129046",
-        "domain": "vudu.com"
-      },
-      {
-        "provider_id": "wm-spectrum on demand",
-        "provider_name": "Spectrum On Demand",
-        "logo_path": null,
-        "directUrl": "https://ondemand.spectrum.net/movies/159729/transformers/",
-        "domain": "ondemand.spectrum.net"
-      },
-      {
-        "provider_id": "wm-appletv",
-        "provider_name": "AppleTV",
-        "logo_path": null,
-        "directUrl": "https://tv.apple.com/us/movie/transformers/umc.cmc.3fcj93vxd6o4wdku85sawi7in?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A270628909",
-        "domain": "tv.apple.com"
+        "directUrl": null
       }
     ],
     "score": 68,
@@ -11952,7 +11854,7 @@
         "provider_id": 8,
         "provider_name": "Netflix",
         "display_priority": 2,
-        "directUrl": "https://www.netflix.com/title/80146805"
+        "directUrl": null
       }
     ],
     "score": 71,
@@ -12013,49 +11915,21 @@
         "provider_id": 257,
         "provider_name": "fuboTV",
         "display_priority": 9,
-        "directUrl": "https://www.fubo.tv/welcome/program/MV002040620000?irmp=1206980&irad=599309"
+        "directUrl": null
       },
       {
         "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
         "provider_id": 2303,
         "provider_name": "Paramount Plus Premium",
         "display_priority": 14,
-        "directUrl": "https://www.paramountplus.com/movies/eagle-eye/arJ9wfF_S8xNPYiCoduVF6nRD4V1MioI?searchReferral=publisher&source=search-feeds"
+        "directUrl": null
       },
       {
         "logo_path": "/rcBwnERpNfPfWB5DaSTyEMCZbCA.jpg",
         "provider_id": 191,
         "provider_name": "Kanopy",
         "display_priority": 33,
-        "directUrl": "https://www.kanopy.com/product/movie-14120830"
-      },
-      {
-        "provider_id": "wm-prime",
-        "provider_name": "Paramount+ (Via Amazon Prime)",
-        "logo_path": null,
-        "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.689f5bde-5fbf-4240-bcf6-debcb4d139d4",
-        "domain": "primevideo.com"
-      },
-      {
-        "provider_id": "wm-appletv",
-        "provider_name": "AppleTV",
-        "logo_path": null,
-        "directUrl": "https://tv.apple.com/us/movie/eagle-eye/umc.cmc.xzs5ptuuxnm4la48khhn6vxs?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A295913878",
-        "domain": "tv.apple.com"
-      },
-      {
-        "provider_id": "wm-vudu",
-        "provider_name": "Fandango at Home",
-        "logo_path": null,
-        "directUrl": "https://athome.fandango.com/content/browse/details/Eagle-Eye/142809",
-        "domain": "vudu.com"
-      },
-      {
-        "provider_id": "wm-spectrum on demand",
-        "provider_name": "Spectrum On Demand",
-        "logo_path": null,
-        "directUrl": "https://ondemand.spectrum.net/movies/172187/eagle-eye/",
-        "domain": "ondemand.spectrum.net"
+        "directUrl": null
       }
     ],
     "score": 65,
@@ -12116,49 +11990,14 @@
         "provider_id": 8,
         "provider_name": "Netflix",
         "display_priority": 2,
-        "directUrl": "https://www.netflix.com/title/81053209"
+        "directUrl": null
       },
       {
         "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
         "provider_id": 2303,
         "provider_name": "Paramount Plus Premium",
         "display_priority": 14,
-        "directUrl": "https://www.paramountplus.com/movies/searching/NbHsFH2UfRwgWchlr1Ahu7zQkCQyrAfN?searchReferral=publisher&source=search-feeds"
-      },
-      {
-        "provider_id": "wm-prime",
-        "provider_name": "Paramount+ (Via Amazon Prime)",
-        "logo_path": null,
-        "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.ceb2bec7-af67-1716-88ad-2d6d39a2edb7",
-        "domain": "primevideo.com"
-      },
-      {
-        "provider_id": "wm-directv on demand",
-        "provider_name": "DirecTV On Demand",
-        "logo_path": null,
-        "directUrl": "https://stream.directv.com/discover/movies/program/VIDEO_PROGRAM/8aea7004-8730-9d22-6b53-178d3ef02686?source=EDDSDSRLG0000000O",
-        "domain": "stream.directv.com"
-      },
-      {
-        "provider_id": "wm-vudu",
-        "provider_name": "Fandango at Home",
-        "logo_path": null,
-        "directUrl": "https://athome.fandango.com/content/browse/details/Searching/987407",
-        "domain": "vudu.com"
-      },
-      {
-        "provider_id": "wm-appletv",
-        "provider_name": "AppleTV",
-        "logo_path": null,
-        "directUrl": "https://tv.apple.com/us/movie/searching/umc.cmc.324aa0s75cunntp834jz5z3tn?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A1425491018",
-        "domain": "tv.apple.com"
-      },
-      {
-        "provider_id": "wm-google-play",
-        "provider_name": "Google Play",
-        "logo_path": null,
-        "directUrl": "https://play.google.com/store/movies/details?id=HjUCFo6eUHA&PAffiliateID=1101l32vn",
-        "domain": "play.google.com"
+        "directUrl": null
       }
     ],
     "score": 76,
@@ -12219,35 +12058,35 @@
         "provider_id": 191,
         "provider_name": "Kanopy",
         "display_priority": 33,
-        "directUrl": "https://www.kanopy.com/product/movie-11335722"
+        "directUrl": null
       },
       {
         "logo_path": "/j7D006Uy3UWwZ6G0xH6BMgIWTzH.jpg",
         "provider_id": 212,
         "provider_name": "Hoopla",
         "display_priority": 34,
-        "directUrl": "https://www.hoopladigital.com/title/12082295?utm_source="
+        "directUrl": null
       },
       {
         "logo_path": "/19fkcOz0xeUgCVW8tO85uOYnYK9.jpg",
         "provider_id": 332,
         "provider_name": "Fandango at Home Free",
         "display_priority": 38,
-        "directUrl": "https://athome.fandango.com/content/browse/details/Cube/6520"
+        "directUrl": null
       },
       {
         "logo_path": "/ptmbGSttkyzawLbxx9MElmxKuVo.jpg",
         "provider_id": 2383,
         "provider_name": "Philo",
         "display_priority": 52,
-        "directUrl": "https://www.philo.com/player/show/U2hvdzo2MDg1NDg4OTk2NDg0ODcyMDY"
+        "directUrl": null
       },
       {
         "logo_path": "/vLZKlXUNDcZR7ilvfY9Wr9k80FZ.jpg",
         "provider_id": 538,
         "provider_name": "Plex",
         "display_priority": 126,
-        "directUrl": "https://watch.plex.tv/movie/cube?utm_source=&utm_medium=deeplink"
+        "directUrl": null
       },
       {
         "logo_path": "/27WMfRN7pQE3j5Khm8fPM7vYyLV.jpg",
@@ -12261,49 +12100,14 @@
         "provider_id": 2409,
         "provider_name": "Fawesome",
         "display_priority": 145,
-        "directUrl": "https://fawesome.tv/movies/10463560/cube?utm_source=&utm_medium=feed"
+        "directUrl": null
       },
       {
         "logo_path": "/zLYr7OPvpskMA4S79E3vlCi71iC.jpg",
         "provider_id": 73,
         "provider_name": "Tubi TV",
         "display_priority": 348,
-        "directUrl": "https://tubitv.com/movies/316459"
-      },
-      {
-        "provider_id": "wm-pluto tv",
-        "provider_name": "Pluto TV",
-        "logo_path": null,
-        "directUrl": "https://pluto.tv/on-demand/movies/cube-1998-1-1?utm_medium=deeplink&utm_source=",
-        "domain": "pluto.tv"
-      },
-      {
-        "provider_id": "wm-the",
-        "provider_name": "The Roku Channel",
-        "logo_path": null,
-        "directUrl": "https://therokuchannel.roku.com/details/559c3be98f3a550c8ce221e9446deca8/cube?source=bing",
-        "domain": "therokuchannel.roku.com"
-      },
-      {
-        "provider_id": "wm-youtube",
-        "provider_name": "YouTube TV",
-        "logo_path": null,
-        "directUrl": "https://tv.youtube.com/browse/UCN6rAEBIBylU3hqrx3BEXzA",
-        "domain": "youtube.com"
-      },
-      {
-        "provider_id": "wm-prime",
-        "provider_name": "Amazon",
-        "logo_path": null,
-        "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.a6a9f679-c48c-5b32-7c9b-8a1c169c03eb",
-        "domain": "primevideo.com"
-      },
-      {
-        "provider_id": "wm-appletv",
-        "provider_name": "AppleTV",
-        "logo_path": null,
-        "directUrl": "https://tv.apple.com/us/movie/cube/umc.cmc.3c6moac70qbnkd3j6r6p0cehz?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A288336610",
-        "domain": "tv.apple.com"
+        "directUrl": null
       }
     ],
     "score": 68,
@@ -12364,35 +12168,7 @@
         "provider_id": 2528,
         "provider_name": "YouTube TV",
         "display_priority": 36,
-        "directUrl": "https://tv.youtube.com/browse/UCHfMsC37fEDA9_Ee2FU3guA"
-      },
-      {
-        "provider_id": "wm-appletv",
-        "provider_name": "AppleTV",
-        "logo_path": null,
-        "directUrl": "https://tv.apple.com/us/movie/deep-blue-sea/umc.cmc.1ktike20tmdngtcpttm66snyv?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A293299190",
-        "domain": "tv.apple.com"
-      },
-      {
-        "provider_id": "wm-vudu",
-        "provider_name": "Fandango at Home",
-        "logo_path": null,
-        "directUrl": "https://athome.fandango.com/content/browse/details/Deep-Blue-Sea/9279",
-        "domain": "vudu.com"
-      },
-      {
-        "provider_id": "wm-prime",
-        "provider_name": "Amazon",
-        "logo_path": null,
-        "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.02a9f669-432d-300c-f8c9-ee5534931015",
-        "domain": "primevideo.com"
-      },
-      {
-        "provider_id": "wm-spectrum on demand",
-        "provider_name": "Spectrum On Demand",
-        "logo_path": null,
-        "directUrl": "https://ondemand.spectrum.net/movies/23516/deep-blue-sea/",
-        "domain": "ondemand.spectrum.net"
+        "directUrl": null
       }
     ],
     "score": 60,
@@ -12453,7 +12229,7 @@
         "provider_id": 8,
         "provider_name": "Netflix",
         "display_priority": 2,
-        "directUrl": "https://www.netflix.com/title/80091936"
+        "directUrl": null
       }
     ],
     "score": 73,
@@ -12514,28 +12290,7 @@
         "provider_id": 1899,
         "provider_name": "HBO Max",
         "display_priority": 155,
-        "directUrl": "https://play.hbomax.com/show/6229eae7-153e-4264-8a64-a42d0a1e7e62?utm_source=universal_search"
-      },
-      {
-        "provider_id": "wm-prime",
-        "provider_name": "MAX (Via Amazon Prime)",
-        "logo_path": null,
-        "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.19b22254-5aa0-4b2e-8be3-8fa7a6297036",
-        "domain": "primevideo.com"
-      },
-      {
-        "provider_id": "wm-youtube",
-        "provider_name": "YouTube TV",
-        "logo_path": null,
-        "directUrl": "https://tv.youtube.com/browse/UC7SWweduLOQDy2HqvxGobgg",
-        "domain": "youtube.com"
-      },
-      {
-        "provider_id": "wm-hulu",
-        "provider_name": "HBO (Via Hulu)",
-        "logo_path": null,
-        "directUrl": "https://www.hulu.com/watch/8e257351-dca8-45fc-aa39-8058ebe3209e",
-        "domain": "hulu.com"
+        "directUrl": null
       }
     ],
     "score": 72,
@@ -12598,7 +12353,7 @@
         "provider_id": 10,
         "provider_name": "Amazon Video",
         "display_priority": 7,
-        "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.74ba6528-8bcd-3fb0-3235-a0f9088211b1"
+        "directUrl": null
       },
       {
         "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
@@ -12626,14 +12381,14 @@
         "provider_id": 7,
         "provider_name": "Fandango At Home",
         "display_priority": 35,
-        "directUrl": "https://athome.fandango.com/content/browse/details/A-Star-Is-Born/996853"
+        "directUrl": null
       },
       {
         "logo_path": "/aAb9CUHjFe9Y3O57qnrJH0KOF1B.jpg",
         "provider_id": 486,
         "provider_name": "Spectrum On Demand",
         "display_priority": 121,
-        "directUrl": "https://ondemand.spectrum.net/movies/14603082/a-star-is-born/"
+        "directUrl": null
       },
       {
         "logo_path": "/vLZKlXUNDcZR7ilvfY9Wr9k80FZ.jpg",
@@ -12641,13 +12396,6 @@
         "provider_name": "Plex",
         "display_priority": 126,
         "directUrl": null
-      },
-      {
-        "provider_id": "wm-appletv",
-        "provider_name": "AppleTV",
-        "logo_path": null,
-        "directUrl": "https://tv.apple.com/us/movie/a-star-is-born/umc.cmc.3pz1dmbs07y7553nlrs7js3by?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A1437031362",
-        "domain": "tv.apple.com"
       }
     ],
     "score": 75,
@@ -12707,21 +12455,21 @@
         "provider_id": 8,
         "provider_name": "Netflix",
         "display_priority": 2,
-        "directUrl": "https://www.netflix.com/title/80031632"
+        "directUrl": null
       },
       {
         "logo_path": "/73uV3YooOA8gD9YQTXFj2XakZWA.jpg",
         "provider_id": 344,
         "provider_name": "Rakuten Viki",
         "display_priority": 98,
-        "directUrl": "https://www.viki.com/videos/1045912v-its-okay-thats-love-episode-1"
+        "directUrl": null
       },
       {
         "logo_path": "/gR8rrj71VCLjlF1LJpplo72MXf0.jpg",
         "provider_id": 575,
         "provider_name": "OnDemandKorea",
         "display_priority": 137,
-        "directUrl": "https://www.ondemandkorea.com/player/vod/its-okay-thats-love-1?contentId=712980"
+        "directUrl": null
       },
       {
         "logo_path": "/hwsU65QW7A4dbMEWkDpgHyCNcfS.jpg",
@@ -12789,14 +12537,7 @@
         "provider_id": 73,
         "provider_name": "Tubi TV",
         "display_priority": 348,
-        "directUrl": "https://tubitv.com/tv-shows/200271092"
-      },
-      {
-        "provider_id": "wm-prime",
-        "provider_name": "Amazon",
-        "logo_path": null,
-        "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.0fb309eb-4d76-4164-a3bc-dc7f9d86c73c",
-        "domain": "primevideo.com"
+        "directUrl": null
       }
     ],
     "score": 64,
@@ -12850,21 +12591,7 @@
         "provider_id": 8,
         "provider_name": "Netflix",
         "display_priority": 2,
-        "directUrl": "https://www.netflix.com/title/80203996"
-      },
-      {
-        "provider_id": "wm-youtube",
-        "provider_name": "YouTube TV",
-        "logo_path": null,
-        "directUrl": "https://tv.youtube.com/browse/UCxy7TAJgJ-bY01zDKGF7c5A",
-        "domain": "youtube.com"
-      },
-      {
-        "provider_id": "wm-google-play",
-        "provider_name": "Google Play",
-        "logo_path": null,
-        "directUrl": "https://play.google.com/store/movies/details?id=e7aMkLOhm7s&PAffiliateID=1101l32vn",
-        "domain": "play.google.com"
+        "directUrl": null
       }
     ],
     "score": 75,
@@ -12925,35 +12652,14 @@
         "provider_id": 8,
         "provider_name": "Netflix",
         "display_priority": 2,
-        "directUrl": "https://www.netflix.com/title/82663312"
+        "directUrl": null
       },
       {
         "logo_path": "/xfKqqWYYIyvjECOFOaYtJdD7gl3.jpg",
         "provider_id": 1963,
         "provider_name": "Xumo Play",
         "display_priority": 168,
-        "directUrl": "https://play.xumo.com/free-movies/baahubali-the-beginning/XM03F9VEJQT3PC"
-      },
-      {
-        "provider_id": "wm-youtube",
-        "provider_name": "YouTube TV",
-        "logo_path": null,
-        "directUrl": "https://tv.youtube.com/browse/UCYPL-3z441WKEiNfXo_guFA",
-        "domain": "youtube.com"
-      },
-      {
-        "provider_id": "wm-appletv",
-        "provider_name": "AppleTV",
-        "logo_path": null,
-        "directUrl": "https://tv.apple.com/us/movie/baahubali-the-beginning/umc.cmc.51jt4tgusgwvkqo8oocmhn9a8?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A1046125692",
-        "domain": "tv.apple.com"
-      },
-      {
-        "provider_id": "wm-google-play",
-        "provider_name": "Google Play",
-        "logo_path": null,
-        "directUrl": "https://play.google.com/store/movies/details?id=HA_tss03GOs&PAffiliateID=1101l32vn",
-        "domain": "play.google.com"
+        "directUrl": null
       }
     ],
     "score": 75,
@@ -13015,13 +12721,6 @@
         "provider_name": "Sony Liv",
         "display_priority": 9,
         "directUrl": null
-      },
-      {
-        "provider_id": "wm-youtube",
-        "provider_name": "YouTube TV",
-        "logo_path": null,
-        "directUrl": "https://tv.youtube.com/browse/UCGyJHIKZ_cQ6-4ZyQ9TSbOg",
-        "domain": "youtube.com"
       }
     ],
     "score": 71,
@@ -13083,7 +12782,7 @@
         "provider_id": 8,
         "provider_name": "Netflix",
         "display_priority": 2,
-        "directUrl": "https://www.netflix.com/title/81728596"
+        "directUrl": null
       }
     ],
     "score": 74,
@@ -13145,28 +12844,7 @@
         "provider_id": 9,
         "provider_name": "Amazon Prime Video",
         "display_priority": 3,
-        "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.3ca9f76a-02e8-be40-ec26-cd790d8c33e3"
-      },
-      {
-        "provider_id": "wm-vudu",
-        "provider_name": "Fandango at Home",
-        "logo_path": null,
-        "directUrl": "https://athome.fandango.com/content/browse/details/Dragonheart/4771",
-        "domain": "vudu.com"
-      },
-      {
-        "provider_id": "wm-appletv",
-        "provider_name": "AppleTV",
-        "logo_path": null,
-        "directUrl": "https://tv.apple.com/us/movie/dragonheart/umc.cmc.1r6u2kruxx9zawqvtiex4wfji?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A280312978",
-        "domain": "tv.apple.com"
-      },
-      {
-        "provider_id": "wm-google-play",
-        "provider_name": "Google Play",
-        "logo_path": null,
-        "directUrl": "https://play.google.com/store/movies/details?id=49LFDgchoQU&PAffiliateID=1101l32vn",
-        "domain": "play.google.com"
+        "directUrl": null
       }
     ],
     "score": 66,
@@ -13228,28 +12906,28 @@
         "provider_id": 9,
         "provider_name": "Amazon Prime Video",
         "display_priority": 3,
-        "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.04b6bfb7-4555-3462-e222-b9aa540c3250"
+        "directUrl": null
       },
       {
         "logo_path": "/dB8G41Q6tSL5NBisrIeqByfepBc.jpg",
         "provider_id": 300,
         "provider_name": "Pluto TV",
         "display_priority": 74,
-        "directUrl": "https://pluto.tv/on-demand/movies/unstoppable-las-2017-1-1?utm_medium=deeplink&utm_source="
+        "directUrl": null
       },
       {
         "logo_path": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
         "provider_id": 457,
         "provider_name": "VIX ",
         "display_priority": 77,
-        "directUrl": "https://vix.com/es-es/detail/video-4439100"
+        "directUrl": null
       },
       {
         "logo_path": "/vLZKlXUNDcZR7ilvfY9Wr9k80FZ.jpg",
         "provider_id": 538,
         "provider_name": "Plex",
         "display_priority": 126,
-        "directUrl": "https://watch.plex.tv/movie/unstoppable-2018?utm_source=&utm_medium=deeplink"
+        "directUrl": null
       },
       {
         "logo_path": "/27WMfRN7pQE3j5Khm8fPM7vYyLV.jpg",
@@ -13263,49 +12941,7 @@
         "provider_id": 73,
         "provider_name": "Tubi TV",
         "display_priority": 348,
-        "directUrl": "https://tubitv.com/movies/100002658"
-      },
-      {
-        "provider_id": "wm-the",
-        "provider_name": "The Roku Channel",
-        "logo_path": null,
-        "directUrl": "https://therokuchannel.roku.com/details/838ea99c29625ef99f0e657db6f51d8e/unstoppable?source=bing",
-        "domain": "therokuchannel.roku.com"
-      },
-      {
-        "provider_id": "wm-hoopla",
-        "provider_name": "Hoopla",
-        "logo_path": null,
-        "directUrl": "https://www.hoopladigital.com/title/12396561",
-        "domain": "hoopladigital.com"
-      },
-      {
-        "provider_id": "wm-youtube",
-        "provider_name": "YouTube TV",
-        "logo_path": null,
-        "directUrl": "https://tv.youtube.com/browse/UCyeokI_8NDe5hwiGKIGSpHw",
-        "domain": "youtube.com"
-      },
-      {
-        "provider_id": "wm-appletv",
-        "provider_name": "AppleTV",
-        "logo_path": null,
-        "directUrl": "https://tv.apple.com/us/movie/unstoppable/umc.cmc.quf26eoadi1svsvx8tkclody?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A1464099677",
-        "domain": "tv.apple.com"
-      },
-      {
-        "provider_id": "wm-vudu",
-        "provider_name": "Fandango at Home",
-        "logo_path": null,
-        "directUrl": "https://athome.fandango.com/content/browse/details/Unstoppable/1137955",
-        "domain": "vudu.com"
-      },
-      {
-        "provider_id": "wm-google-play",
-        "provider_name": "Google Play",
-        "logo_path": null,
-        "directUrl": "https://play.google.com/store/movies/details?id=xyTmQ7dSqps&PAffiliateID=1101l32vn",
-        "domain": "play.google.com"
+        "directUrl": null
       }
     ],
     "score": 74,
@@ -13426,7 +13062,7 @@
         "provider_id": 8,
         "provider_name": "Netflix",
         "display_priority": 2,
-        "directUrl": "https://www.netflix.com/title/80236421"
+        "directUrl": null
       }
     ],
     "score": 60,
@@ -13486,7 +13122,7 @@
         "provider_id": 8,
         "provider_name": "Netflix",
         "display_priority": 2,
-        "directUrl": "https://www.netflix.com/title/81690671"
+        "directUrl": null
       }
     ],
     "score": 77,
@@ -13548,35 +13184,7 @@
         "provider_id": 337,
         "provider_name": "Disney Plus",
         "display_priority": 5,
-        "directUrl": "https://www.disneyplus.com/browse/entity-985637aa-aae9-4b82-99e5-23fad8424eb7"
-      },
-      {
-        "provider_id": "wm-appletv",
-        "provider_name": "AppleTV",
-        "logo_path": null,
-        "directUrl": "https://tv.apple.com/us/movie/around-the-world-in-80-days/umc.cmc.678crgl7ftbf2z2wmsp3mtdra?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A186109380",
-        "domain": "tv.apple.com"
-      },
-      {
-        "provider_id": "wm-vudu",
-        "provider_name": "Fandango at Home",
-        "logo_path": null,
-        "directUrl": "https://athome.fandango.com/content/browse/details/Around-the-World-in-80-Days/43290",
-        "domain": "vudu.com"
-      },
-      {
-        "provider_id": "wm-prime",
-        "provider_name": "Amazon",
-        "logo_path": null,
-        "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.12a9f77f-d965-3728-a1ec-ae7ce3e4d02b",
-        "domain": "primevideo.com"
-      },
-      {
-        "provider_id": "wm-google-play",
-        "provider_name": "Google Play",
-        "logo_path": null,
-        "directUrl": "https://play.google.com/store/movies/details?id=6lY9TKlRTkQ&PAffiliateID=1101l32vn",
-        "domain": "play.google.com"
+        "directUrl": null
       }
     ],
     "score": 60,
@@ -13638,49 +13246,21 @@
         "provider_id": 8,
         "provider_name": "Netflix",
         "display_priority": 2,
-        "directUrl": "https://www.netflix.com/title/80203869"
+        "directUrl": null
       },
       {
         "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
         "provider_id": 9,
         "provider_name": "Amazon Prime Video",
         "display_priority": 3,
-        "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.24b9821a-53d5-dd13-4982-e96de5527e91"
+        "directUrl": null
       },
       {
         "logo_path": "/pSUa7lMYLoQAU00ikXoHxmOfTZ9.jpg",
         "provider_id": 2409,
         "provider_name": "Fawesome",
         "display_priority": 145,
-        "directUrl": "https://fawesome.tv/movies/10647720/archive?utm_source=&utm_medium=feed"
-      },
-      {
-        "provider_id": "wm-the",
-        "provider_name": "The Roku Channel",
-        "logo_path": null,
-        "directUrl": "https://therokuchannel.roku.com/details/1e103c774b6f5f938a58226401006459/archive?source=bing",
-        "domain": "therokuchannel.roku.com"
-      },
-      {
-        "provider_id": "wm-pluto tv",
-        "provider_name": "Pluto TV",
-        "logo_path": null,
-        "directUrl": "https://pluto.tv/on-demand/movies/archive-2020-1-1?utm_medium=deeplink&utm_source=",
-        "domain": "pluto.tv"
-      },
-      {
-        "provider_id": "wm-appletv",
-        "provider_name": "AppleTV",
-        "logo_path": null,
-        "directUrl": "https://tv.apple.com/us/movie/archive/umc.cmc.51o00he77c4gmpdgef95dalzm?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A1519384110",
-        "domain": "tv.apple.com"
-      },
-      {
-        "provider_id": "wm-vudu",
-        "provider_name": "Fandango at Home",
-        "logo_path": null,
-        "directUrl": "https://athome.fandango.com/content/browse/details/Archive/1430061",
-        "domain": "vudu.com"
+        "directUrl": null
       }
     ],
     "score": 64,
@@ -13755,35 +13335,7 @@
         "provider_id": 73,
         "provider_name": "Tubi TV",
         "display_priority": 348,
-        "directUrl": "https://tubitv.com/movies/524722"
-      },
-      {
-        "provider_id": "wm-appletv",
-        "provider_name": "AppleTV",
-        "logo_path": null,
-        "directUrl": "https://tv.apple.com/us/movie/enders-game/umc.cmc.16c66axzxuhkpguljt9jv277h?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A723143800",
-        "domain": "tv.apple.com"
-      },
-      {
-        "provider_id": "wm-youtube",
-        "provider_name": "YouTube",
-        "logo_path": null,
-        "directUrl": "https://www.youtube.com/results?search_query=Ender%27s+Game%2Bmovie",
-        "domain": "youtube.com"
-      },
-      {
-        "provider_id": "wm-prime",
-        "provider_name": "Amazon",
-        "logo_path": null,
-        "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.d756206c-7cbe-46de-9c2e-58343470b42b",
-        "domain": "primevideo.com"
-      },
-      {
-        "provider_id": "wm-vudu",
-        "provider_name": "Fandango at Home",
-        "logo_path": null,
-        "directUrl": "https://athome.fandango.com/content/browse/details/Ender-s-Game/490790",
-        "domain": "vudu.com"
+        "directUrl": null
       }
     ],
     "score": 66,
@@ -13845,7 +13397,7 @@
         "provider_id": 8,
         "provider_name": "Netflix",
         "display_priority": 2,
-        "directUrl": "https://www.netflix.com/title/81902035"
+        "directUrl": null
       }
     ],
     "score": 76,
@@ -13974,42 +13526,14 @@
         "provider_id": 8,
         "provider_name": "Netflix",
         "display_priority": 2,
-        "directUrl": "https://www.netflix.com/title/81194641"
+        "directUrl": null
       },
       {
         "logo_path": "/j7D006Uy3UWwZ6G0xH6BMgIWTzH.jpg",
         "provider_id": 212,
         "provider_name": "Hoopla",
         "display_priority": 34,
-        "directUrl": "https://www.hoopladigital.com/title/12645810?utm_source="
-      },
-      {
-        "provider_id": "wm-appletv",
-        "provider_name": "AppleTV",
-        "logo_path": null,
-        "directUrl": "https://tv.apple.com/us/movie/code-8/umc.cmc.7ej0jzg59gt7lgfmai5jq4ozy?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A1487876821",
-        "domain": "tv.apple.com"
-      },
-      {
-        "provider_id": "wm-vudu",
-        "provider_name": "Fandango at Home",
-        "logo_path": null,
-        "directUrl": "https://athome.fandango.com/content/browse/details/Code-8/1304714",
-        "domain": "vudu.com"
-      },
-      {
-        "provider_id": "wm-prime",
-        "provider_name": "Amazon",
-        "logo_path": null,
-        "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.90b7790f-6d78-392b-f347-92f2632ec94e",
-        "domain": "primevideo.com"
-      },
-      {
-        "provider_id": "wm-youtube",
-        "provider_name": "YouTube",
-        "logo_path": null,
-        "directUrl": "https://www.youtube.com/results?search_query=Code+8%2Bmovie",
-        "domain": "youtube.com"
+        "directUrl": null
       }
     ],
     "score": 63,
@@ -14071,7 +13595,7 @@
         "provider_id": 8,
         "provider_name": "Netflix",
         "display_priority": 2,
-        "directUrl": "https://www.netflix.com/title/80195964"
+        "directUrl": null
       }
     ],
     "score": 60,
@@ -14132,28 +13656,28 @@
         "provider_id": 8,
         "provider_name": "Netflix",
         "display_priority": 2,
-        "directUrl": "https://www.netflix.com/title/81725542"
+        "directUrl": null
       },
       {
         "logo_path": "/ovmu6uot1XVvsemM2dDySXLiX57.jpg",
         "provider_id": 526,
         "provider_name": "AMC+",
         "display_priority": 29,
-        "directUrl": "https://www.amcplus.com/movies/blackberry--1065021"
+        "directUrl": null
       },
       {
         "logo_path": "/rcBwnERpNfPfWB5DaSTyEMCZbCA.jpg",
         "provider_id": 191,
         "provider_name": "Kanopy",
         "display_priority": 33,
-        "directUrl": "https://www.kanopy.com/en/product/blackberry"
+        "directUrl": null
       },
       {
         "logo_path": "/ptmbGSttkyzawLbxx9MElmxKuVo.jpg",
         "provider_id": 2383,
         "provider_name": "Philo",
         "display_priority": 52,
-        "directUrl": "https://www.philo.com/player/show/U2hvdzo2MDg1NDg4OTk2NDg1MzUwMDU"
+        "directUrl": null
       },
       {
         "logo_path": "/1Edma9SrJnqkQW3BqFd2rJNHZvX.jpg",
@@ -14161,55 +13685,6 @@
         "provider_name": "Sundance Now",
         "display_priority": 57,
         "directUrl": null
-      },
-      {
-        "provider_id": "wm-sundance",
-        "provider_name": "Sundance",
-        "logo_path": null,
-        "directUrl": "https://www.sundancenow.com/films/watch/blackberry/c2df36385bc73e1f",
-        "domain": "sundancenow.com"
-      },
-      {
-        "provider_id": "wm-sundancenow doc club",
-        "provider_name": "SundanceNow Doc Club",
-        "logo_path": null,
-        "directUrl": "https://www.sundancenow.com/play/c2df36385bc73e1f",
-        "domain": "sundancenow.com"
-      },
-      {
-        "provider_id": "wm-prime",
-        "provider_name": "SundanceNow Doc Club (Via Amazon Pr",
-        "logo_path": null,
-        "directUrl": "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.a081d0f0-5f7d-40b6-8742-2d646b87971f?tag=&autoplay=1",
-        "domain": "primevideo.com"
-      },
-      {
-        "provider_id": "wm-directv on demand",
-        "provider_name": "DirecTV On Demand",
-        "logo_path": null,
-        "directUrl": "https://stream.directv.com/discover/movies/program/VIDEO_PROGRAM/afbe8021-6cb3-5ee8-bbb8-108023755dd7?source=EDDSDSRLG0000000O",
-        "domain": "stream.directv.com"
-      },
-      {
-        "provider_id": "wm-youtube",
-        "provider_name": "YouTube TV",
-        "logo_path": null,
-        "directUrl": "https://tv.youtube.com/browse/UCYoDjx-pcRrZCD45xGgz4fg",
-        "domain": "youtube.com"
-      },
-      {
-        "provider_id": "wm-appletv",
-        "provider_name": "AppleTV",
-        "logo_path": null,
-        "directUrl": "https://tv.apple.com/us/movie/blackberry/umc.cmc.3l1hmmtt33myfoyr38vfg85js?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A1688100978",
-        "domain": "tv.apple.com"
-      },
-      {
-        "provider_id": "wm-vudu",
-        "provider_name": "Fandango at Home",
-        "logo_path": null,
-        "directUrl": "https://athome.fandango.com/content/browse/details/BlackBerry/2349910",
-        "domain": "vudu.com"
       }
     ],
     "score": 72,
@@ -14270,49 +13745,21 @@
         "provider_id": 9,
         "provider_name": "Amazon Prime Video",
         "display_priority": 3,
-        "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.404aadac-1c84-4086-a88d-9104b939cc36"
+        "directUrl": null
       },
       {
         "logo_path": "/pSUa7lMYLoQAU00ikXoHxmOfTZ9.jpg",
         "provider_id": 2409,
         "provider_name": "Fawesome",
         "display_priority": 145,
-        "directUrl": "https://fawesome.tv/movies/10801699/replicas?utm_source=&utm_medium=feed"
+        "directUrl": null
       },
       {
         "logo_path": "/zLYr7OPvpskMA4S79E3vlCi71iC.jpg",
         "provider_id": 73,
         "provider_name": "Tubi TV",
         "display_priority": 348,
-        "directUrl": "https://tubitv.com/movies/704124"
-      },
-      {
-        "provider_id": "wm-the",
-        "provider_name": "The Roku Channel",
-        "logo_path": null,
-        "directUrl": "https://therokuchannel.roku.com/details/f7a3fa059b725400887ab7370478ecd3/replicas?source=bing",
-        "domain": "therokuchannel.roku.com"
-      },
-      {
-        "provider_id": "wm-vudu",
-        "provider_name": "Fandango at Home",
-        "logo_path": null,
-        "directUrl": "https://athome.fandango.com/content/browse/details/Replicas/1055414",
-        "domain": "vudu.com"
-      },
-      {
-        "provider_id": "wm-appletv",
-        "provider_name": "AppleTV",
-        "logo_path": null,
-        "directUrl": "https://tv.apple.com/us/movie/replicas/umc.cmc.3uqwy5rhd1gq5y1ydebk8ihxv?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A1447927921",
-        "domain": "tv.apple.com"
-      },
-      {
-        "provider_id": "wm-spectrum on demand",
-        "provider_name": "Spectrum On Demand",
-        "logo_path": null,
-        "directUrl": "https://ondemand.spectrum.net/movies/15208516/replicas/",
-        "domain": "ondemand.spectrum.net"
+        "directUrl": null
       }
     ],
     "score": 60,
@@ -14372,7 +13819,7 @@
         "provider_id": 538,
         "provider_name": "Plex",
         "display_priority": 126,
-        "directUrl": "https://watch.plex.tv/movie/13b-fear-has-a-new-address?autoplay=1&utm_content=5d776844999c64001ec322f6&utm_medium=deeplink&utm_source="
+        "directUrl": null
       },
       {
         "logo_path": "/27WMfRN7pQE3j5Khm8fPM7vYyLV.jpg",
@@ -14386,21 +13833,14 @@
         "provider_id": 2409,
         "provider_name": "Fawesome",
         "display_priority": 145,
-        "directUrl": "https://fawesome.tv/movies/10715655/13b-fear-has-a-new-address?utm_source=&utm_medium=feed"
+        "directUrl": null
       },
       {
         "logo_path": "/zLYr7OPvpskMA4S79E3vlCi71iC.jpg",
         "provider_id": 73,
         "provider_name": "Tubi TV",
         "display_priority": 348,
-        "directUrl": "https://tubitv.com/movies/100045261"
-      },
-      {
-        "provider_id": "wm-prime",
-        "provider_name": "Amazon",
-        "logo_path": null,
-        "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.1eb9b863-d656-2ec6-ae9c-1207b51b915e",
-        "domain": "primevideo.com"
+        "directUrl": null
       }
     ],
     "score": 63,
@@ -14460,21 +13900,7 @@
         "provider_id": 8,
         "provider_name": "Netflix",
         "display_priority": 2,
-        "directUrl": "https://www.netflix.com/title/70063017"
-      },
-      {
-        "provider_id": "wm-appletv",
-        "provider_name": "AppleTV",
-        "logo_path": null,
-        "directUrl": "https://tv.apple.com/us/movie/guru/umc.cmc.17yi7c37i5lr6880qwkws726u?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A1341877634",
-        "domain": "tv.apple.com"
-      },
-      {
-        "provider_id": "wm-google-play",
-        "provider_name": "Google Play",
-        "logo_path": null,
-        "directUrl": "https://play.google.com/store/movies/details?id=oH-o4gOxn_I&PAffiliateID=1101l32vn",
-        "domain": "play.google.com"
+        "directUrl": null
       }
     ],
     "score": 69,
@@ -14529,7 +13955,7 @@
         "provider_id": 8,
         "provider_name": "Netflix",
         "display_priority": 2,
-        "directUrl": "https://www.netflix.com/title/80227090"
+        "directUrl": null
       }
     ],
     "score": 67,
@@ -14657,14 +14083,14 @@
         "provider_id": 309,
         "provider_name": "Sun Nxt",
         "display_priority": 45,
-        "directUrl": "https://www.sunnxt.com/movie/detail/113647/enthiran-(malayalam)/"
+        "directUrl": null
       },
       {
         "logo_path": "/xfKqqWYYIyvjECOFOaYtJdD7gl3.jpg",
         "provider_id": 1963,
         "provider_name": "Xumo Play",
         "display_priority": 168,
-        "directUrl": "https://play.xumo.com/free-movies/robot/XM0VUVT4DUH6L2"
+        "directUrl": null
       }
     ],
     "score": 66,
@@ -14724,7 +14150,7 @@
         "provider_id": 9,
         "provider_name": "Amazon Prime Video",
         "display_priority": 3,
-        "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.bebc3a72-086f-2f2a-7592-f50c460cdf85"
+        "directUrl": null
       }
     ],
     "score": 78,
@@ -22573,6 +21999,13 @@
         "provider_name": "Apple TV",
         "display_priority": 4,
         "directUrl": null
+      },
+      {
+        "provider_id": "wm-appletv+",
+        "provider_name": "AppleTV+",
+        "logo_path": null,
+        "directUrl": "https://tv.apple.com/us/episode/pilot/umc.cmc.zb0yksqtym68hasbq8mj4jwp?at=1000l3V2&ct=app_tvplus&itscg=30200&itsct=&playableId=tvs.sbd.4000%3AVTEDL0560101&showId=umc.cmc.vtoh0mn0xn7t3c643xqonfzy",
+        "domain": "tv.apple.com"
       }
     ],
     "director": "Jason Sudeikis",
@@ -22624,6 +22057,97 @@
     "scary": false,
     "intense": false,
     "mindbending": false,
-    "clever": false
+    "clever": false,
+    "providers": [
+      {
+        "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+        "provider_id": 337,
+        "provider_name": "Disney Plus",
+        "display_priority": 5,
+        "directUrl": "https://www.disneyplus.com/browse/entity-032c0081-20a9-4b24-a7ad-a3703d8dcef6"
+      },
+      {
+        "logo_path": "/bxBlRPEPpMVDc4jMhSrTf2339DW.jpg",
+        "provider_id": 15,
+        "provider_name": "Hulu",
+        "display_priority": 6,
+        "directUrl": "https://www.hulu.com/watch/032c0081-20a9-4b24-a7ad-a3703d8dcef6"
+      },
+      {
+        "logo_path": "/ovmu6uot1XVvsemM2dDySXLiX57.jpg",
+        "provider_id": 526,
+        "provider_name": "AMC+",
+        "display_priority": 30,
+        "directUrl": "https://www.amcplus.com/movies/national-treasure--1067881"
+      },
+      {
+        "logo_path": "/x9zOHTUkQzt3PgPVKbMH9CKBwLK.jpg",
+        "provider_id": 2528,
+        "provider_name": "YouTube TV",
+        "display_priority": 37,
+        "directUrl": "https://tv.youtube.com/browse/UC-dwnWAZyFkvitc4DpOBC8A"
+      },
+      {
+        "logo_path": "/ptmbGSttkyzawLbxx9MElmxKuVo.jpg",
+        "provider_id": 2383,
+        "provider_name": "Philo",
+        "display_priority": 53,
+        "directUrl": "https://www.philo.com/player/show/U2hvdzo2MDg1NDg4OTk2NDg0NDEwOTc"
+      },
+      {
+        "provider_id": "wm-directv on demand",
+        "provider_name": "DirecTV On Demand",
+        "logo_path": null,
+        "directUrl": "https://stream.directv.com/discover/movies/program/VIDEO_PROGRAM/a064254b-a84d-b4bc-6b66-efe3844ce9a5?source=EDDSDSRLG0000000O",
+        "domain": "stream.directv.com"
+      },
+      {
+        "provider_id": "wm-amc",
+        "provider_name": "AMC",
+        "logo_path": null,
+        "directUrl": "https://www.amc.com/movies/national-treasure--1067881",
+        "domain": "amc.com"
+      },
+      {
+        "provider_id": "wm-vudu",
+        "provider_name": "Fandango at Home",
+        "logo_path": null,
+        "directUrl": "https://athome.fandango.com/content/browse/details/National-Treasure/46635",
+        "domain": "vudu.com"
+      },
+      {
+        "provider_id": "wm-appletv",
+        "provider_name": "AppleTV",
+        "logo_path": null,
+        "directUrl": "https://tv.apple.com/us/movie/national-treasure/umc.cmc.107ha7q79qm6lc9ldm81o9cz9?at=1000l3V2&ct=app_tv&itscg=30200&itsct=&playableId=tvs.sbd.9001%3A187499635",
+        "domain": "tv.apple.com"
+      },
+      {
+        "provider_id": "wm-prime",
+        "provider_name": "Amazon",
+        "logo_path": null,
+        "directUrl": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.d4a9f79e-20b4-8b72-9bb4-144dcca06b14",
+        "domain": "primevideo.com"
+      }
+    ],
+    "director": "Jon Turteltaub",
+    "cast": [
+      "Nicolas Cage",
+      "Diane Kruger",
+      "Justin Bartha",
+      "Sean Bean",
+      "Jon Voight"
+    ],
+    "score": 67,
+    "photos": [
+      "https://image.tmdb.org/t/p/w780/9EnZD3ZWjpJy4IPoQkqTzxvZrso.jpg",
+      "https://image.tmdb.org/t/p/w780/xXWT0je8dTFFNBq6P2CeTZkPUu2.jpg",
+      "https://image.tmdb.org/t/p/w780/kHjuTG3oHK2e9SlMQ0WI2zTN6sR.jpg",
+      "https://image.tmdb.org/t/p/w780/dPKYTTGZ3ypMD8YlShmnvfN8lwf.jpg",
+      "https://image.tmdb.org/t/p/w780/tpYIGw5VYuxNr7i6Y28sd5rDHGe.jpg",
+      "https://image.tmdb.org/t/p/w780/A00cvnbkl7zGtc4WHSdOLZdnzLY.jpg",
+      "https://image.tmdb.org/t/p/w780/1D3lWn241rwgP96oaOcOBNs9Yhn.jpg",
+      "https://image.tmdb.org/t/p/w780/6W1E28VY8aKUsj7gFk5TXSiI96J.jpg"
+    ]
   }
 ]
